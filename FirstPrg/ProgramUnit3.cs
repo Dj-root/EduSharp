@@ -1,13 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 
 
 namespace EduSharp.Unit3
 {
-    class Program
+    class ProgramUnit3
     {
         static void Main(string[] args)
         {
@@ -38,7 +39,11 @@ namespace EduSharp.Unit3
             StringInterpolation();
             Console.WriteLine();
 
+            DeclareImplicitVars();
+            Console.WriteLine();
 
+            LinqQueryOverInts();
+            Console.WriteLine();
 
             Console.ReadLine();
         }
@@ -145,6 +150,36 @@ namespace EduSharp.Unit3
 
             Console.WriteLine(greeting2.ToString());
         }
+
+        static void DeclareImplicitVars()
+        {
+            var myInt = 0;
+            var myBool = true;
+            var myString = "Time, matches on...";
+
+            Console.WriteLine("myInt is a: {0}", myInt.GetType().Name);
+            Console.WriteLine("myBool is a: {0}", myBool.GetType().Name);
+            Console.WriteLine("myString is a: {0}", myString.GetType().Name);
+        }
+
+        static void LinqQueryOverInts()
+        {
+            int[] numbers = {10, 20, 30, 40, 1, 2, 3, 8};
+
+            var subset = from i in numbers where i <10 select i;
+
+            Console.WriteLine("Value in subset: ");
+            foreach (var i in subset)
+            {
+                Console.WriteLine("{0} ",i);
+            }
+
+            Console.WriteLine();
+
+            Console.WriteLine("subset is a: {0}", subset.GetType().Name);
+            Console.WriteLine("subset is defined in: {0}", subset.GetType().Name);
+        }
+
 
 
     }
