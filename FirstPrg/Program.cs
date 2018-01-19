@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace FirstPrg
+namespace EduSharp.Unit3
 {
     class Program
     {
