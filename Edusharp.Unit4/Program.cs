@@ -45,6 +45,7 @@ namespace Edusharp.Unit4
             Console.WriteLine("Average of data is: {0}", average);
             // Average of 0 is 0!
             Console.WriteLine("Average of data is: {0}", CalculateAverage());
+            Console.WriteLine();
             
 
             EnterLogData("Oh no! Grid can't find data");
@@ -52,7 +53,8 @@ namespace Edusharp.Unit4
             Console.WriteLine();
 
 
-
+            DateTime timeStamp = DateTime.Now;
+            Console.WriteLine("Current time is: {0}", timeStamp);
 
 
             Console.ReadLine();
@@ -100,6 +102,7 @@ namespace Edusharp.Unit4
             Console.Beep();
             Console.WriteLine("Error: {0}", message);
             Console.WriteLine("Owner of Error: {0}", owner);
+//            Console.WriteLine("Time of Error: {0}", timeStamp);
         }
 
 
