@@ -46,7 +46,7 @@ namespace Edusharp.Unit4
             // Average of 0 is 0!
             Console.WriteLine("Average of data is: {0}", CalculateAverage());
             Console.WriteLine();
-            
+
 
             EnterLogData("Oh no! Grid can't find data");
             EnterLogData("Oh no! I can't find the payroll data", "CFO");
@@ -55,6 +55,20 @@ namespace Edusharp.Unit4
 
             DateTime timeStamp = DateTime.Now;
             Console.WriteLine("Current time is: {0}", timeStamp);
+            Console.WriteLine();
+
+            ////////////////////////////////////////////////////////////////////////
+
+            Console.WriteLine("***** Fun with Arrays *****");
+            SimpleArrays();
+            Console.WriteLine();
+
+            RectMultidimensionalArray();
+            Console.WriteLine();
+
+            JaggedMultidimensionalArray();
+            Console.WriteLine();
+
 
 
             Console.ReadLine();
@@ -99,14 +113,82 @@ namespace Edusharp.Unit4
 
         static void EnterLogData(string message, string owner = "Programmer")
         {
-            Console.Beep();
+            //            Console.Beep();
             Console.WriteLine("Error: {0}", message);
             Console.WriteLine("Owner of Error: {0}", owner);
-//            Console.WriteLine("Time of Error: {0}", timeStamp);
+            //            Console.WriteLine("Time of Error: {0}", timeStamp);
         }
 
+        static void SimpleArrays()
+        {
+            Console.WriteLine("=> Simple Array Creation.");
+            int[] myInts = new int[3];
+            myInts[0] = 100;
+            myInts[1] = 200;
+            myInts[2] = 300;
 
+            foreach (int i in myInts)
+            {
+                Console.WriteLine(i);
+            }
 
+            Console.WriteLine();
+
+            string[] booksOnDotNet = new string[100];
+            Console.WriteLine();
+        }
+
+        static void RectMultidimensionalArray()
+        {
+            Console.WriteLine("=> Rectangular multidimensional array.");
+            int[,] myMatrix;
+            myMatrix = new int[3, 4];
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    myMatrix[i, j] = i * j;
+                }
+            }
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 4; j++)
+                {
+                    Console.Write(myMatrix[i, j] + "\t");
+                }
+                Console.WriteLine();
+            }
+            Console.WriteLine();
+        }
+
+        static void JaggedMultidimensionalArray()
+        {
+            Console.WriteLine("=> Jagged multidimensional array.");
+            // A jagged MD array (i.e., an array of arrays).
+            // Here we have an array of 5 different arrays.
+
+            int[][] myJagArray = new int[5][];
+
+            for (int i = 0; i < myJagArray.Length; i++)
+            {
+                myJagArray[i] = new int[i + 7];
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                for (int j = 0; j < myJagArray[i].Length; j++)
+                {
+                    Console.Write(myJagArray[i][j] + " ");
+                }
+
+                Console.WriteLine();
+            }
+
+            Console.WriteLine();
+
+        }
 
     }
 }
