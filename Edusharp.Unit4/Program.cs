@@ -149,14 +149,31 @@ namespace Edusharp.Unit4
             {
                 Console.WriteLine("Value of 'bb' is undefined");
             }
-
             Console.WriteLine();
+
+            int myData = dr.GetIntFromDatabase() ?? 100;
+            Console.WriteLine("Value of myData: {0}", myData);
+
+            int? moreData = dr.GetIntFromDatabase();
+            if (!moreData.HasValue)
+            {
+                moreData = 100;
+            }
+
+            Console.WriteLine("Value of moreData: {0}", moreData);
+            Console.WriteLine();
+
+            TesterMethod(null);
+
 
 
             Console.ReadLine();
         }
 
-
+        static void TesterMethod(string[] args)
+        {
+            Console.WriteLine($"You sent me {args?.Length ?? 0} arguments.");
+        }
 
         struct Point
         {
