@@ -77,7 +77,7 @@ namespace Edusharp.Unit4
             Console.WriteLine("**** Fun with Enums ****");
             EmpType emp = EmpType.Contractor;
             AskForBonus(emp);
-            Console.WriteLine("EmpType uses a {0} for storage",Enum.GetUnderlyingType(emp.GetType()));
+            Console.WriteLine("EmpType uses a {0} for storage", Enum.GetUnderlyingType(emp.GetType()));
             Console.WriteLine("EmpType uses a {0} for storage", Enum.GetUnderlyingType(typeof(EmpType)));
             Console.WriteLine("emp is a {0}", emp.ToString());
             Console.WriteLine("{0} = {1}", emp.ToString(), (byte)emp);
@@ -90,13 +90,94 @@ namespace Edusharp.Unit4
             EvaluateEnum(e2);
             EvaluateEnum(day);
             EvaluateEnum(cc);
+            Console.WriteLine();
 
+            Console.WriteLine("***** A First Look at Structures *****\n");
+            Point myPoint;
+            myPoint.X = 349;
+            myPoint.Y = 76;
+            myPoint.Display();
+
+            myPoint.Increment();
+            myPoint.Display();
+
+            Point p2 = new Point(50, 60);
+            p2.Display();
+
+            Program.ValueTypeAssigment();
+            Console.WriteLine();
+
+            ShapeInfo.ValueTypeContainingRefType();
+            Console.WriteLine();
+
+            Console.WriteLine("***** Passing Person object by value *****");
+            Person fred = new Person("Fred", 12);
+            Console.WriteLine("\nDefore by value call, Person is: ");
+            fred.Display();
+
+            fred.SendPersonByValue(fred);
+            Console.WriteLine("\nAfter by value call, Person is:");
+            fred.Display();
+
+            Console.WriteLine("***** Passing Person object by reference *****");
+            Person mel = new Person("Mel", 23);
+            Console.WriteLine("Before by ref call, Person is:");
+            mel.Display();
+
+            Person.SendAPersonByReference(ref mel);
+            Console.WriteLine("After by ref call, Person is:");
+            mel.Display();
 
 
 
             Console.ReadLine();
         }
 
+
+        struct Point
+        {
+            public int X;
+            public int Y;
+
+            public Point(int XPos, int YPos)
+            {
+                X = XPos;
+                Y = YPos;
+            }
+
+            public void Increment()
+            {
+                X++;
+                Y++;
+            }
+
+            public void Decrement()
+            {
+                X--;
+                Y--;
+            }
+
+            public void Display()
+            {
+                Console.WriteLine("X = {0}, Y = {1}", X, Y);
+            }
+        }
+
+        static void ValueTypeAssigment()
+        {
+            Console.WriteLine("\nAssigning value types\n");
+
+            Point p1 = new Point(10, 10);
+            Point p2 = p1;
+
+            p1.Display();
+            p2.Display();
+
+            p1.X = 100;
+            Console.WriteLine("\n=> Changed p1.X");
+            p1.Display();
+            p2.Display();
+        }
 
         enum EmpType
         {
@@ -268,7 +349,7 @@ namespace Edusharp.Unit4
 
         static string[] GetStringArray()
         {
-            string[] theStrings = {"Hello", "from", "GetStringArray"};
+            string[] theStrings = { "Hello", "from", "GetStringArray" };
             return theStrings;
         }
 
@@ -276,7 +357,7 @@ namespace Edusharp.Unit4
         {
             Console.WriteLine("=> Arrays as params and return values.");
             // Pass array as parameter.
-            int[] ages = {20, 22, 23, 0};
+            int[] ages = { 20, 22, 23, 0 };
             PrintArray(ages);
 
             string[] strs = GetStringArray();
