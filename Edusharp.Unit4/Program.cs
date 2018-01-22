@@ -82,6 +82,16 @@ namespace Edusharp.Unit4
             Console.WriteLine("emp is a {0}", emp.ToString());
             Console.WriteLine("{0} = {1}", emp.ToString(), (byte)emp);
 
+            EmpType e2 = EmpType.Contractor;
+
+            DayOfWeek day = DayOfWeek.Monday;
+            ConsoleColor cc = ConsoleColor.Gray;
+
+            EvaluateEnum(e2);
+            EvaluateEnum(day);
+            EvaluateEnum(cc);
+
+
 
 
             Console.ReadLine();
