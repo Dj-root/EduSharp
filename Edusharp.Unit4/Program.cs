@@ -18,7 +18,6 @@ namespace Edusharp.Unit4
             Console.WriteLine("90 + 90 = {0}", ans);
             Console.WriteLine();
 
-
             int i;
             string str;
             bool b;
@@ -127,11 +126,36 @@ namespace Edusharp.Unit4
             Person.SendAPersonByReference(ref mel);
             Console.WriteLine("After by ref call, Person is:");
             mel.Display();
+            Console.WriteLine();
 
+            Console.WriteLine("***** Fun with Nullable Data *****\n");
+            DatabaseReader dr = new DatabaseReader();
+            int? ii = dr.GetIntFromDatabase();
+            if (ii.HasValue)
+            {
+                Console.WriteLine("Value of 'ii' is: {0}", ii.Value);
+            }
+            else
+            {
+                Console.WriteLine("Value of 'ii' is undefined");
+            }
+
+            bool? bb = dr.GetBollFromDatabase();
+            if (bb != null)
+            {
+                Console.WriteLine("Value of 'bb' is: {0}", bb.Value);
+            }
+            else
+            {
+                Console.WriteLine("Value of 'bb' is undefined");
+            }
+
+            Console.WriteLine();
 
 
             Console.ReadLine();
         }
+
 
 
         struct Point
