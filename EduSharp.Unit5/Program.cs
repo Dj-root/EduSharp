@@ -35,7 +35,36 @@ namespace EduSharp.Unit5
             Console.WriteLine();
 
 
-           
+            Motorcycle mc = new Motorcycle();
+            mc.PopAHweely();
+
+            Motorcycle c = new Motorcycle(5);
+            c.SetDriverName("Tiny");
+            c.PopAHweely();
+            Console.WriteLine("Rider's name is {0}", c.driverName);
+            Console.WriteLine();
+
+
+            Console.WriteLine("***** Fun with Static Data *****\n");
+            SavingsAccount s1 = new SavingsAccount(50);
+            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.GetInterestRate());
+            SavingsAccount s2 = new SavingsAccount(100);
+            SavingsAccount.SetInterestRate(0.08);
+            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.GetInterestRate());
+
+            SavingsAccount s3 = new SavingsAccount(10000.75);
+            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.GetInterestRate());
+            Console.WriteLine();
+
+
+            Console.WriteLine("***** Fun with Static Classes *****\n");
+            TimeUtilClass.PrintDate();
+            TimeUtilClass.PrintTime();
+            Console.WriteLine();
+
+
+
+
             Console.ReadLine();
         }
     }
