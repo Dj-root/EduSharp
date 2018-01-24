@@ -4,22 +4,36 @@ namespace EduSharp.Unit5
 {
     public class Employee
     {
+        // Field data
         private string empName;
         private int empID;
         private float currPay;
+        private int empAge;
 
+        // Constructors
         public Employee()
         {
         }
 
-        public Employee(string empName, int empID, float currPay)
+        public Employee(string name, int empID, float currPay)
+        :this(name, 0, empID, currPay){ }
+
+        public Employee(string name, int age, int id, float pay)
         {
-            this.empName = empName;
-            this.empID = empID;
-            this.currPay = currPay;
+            this.Name = name;
+            this.ID = id;
+            this.Age = age;
+            this.Pay = pay;
+        }
+        
+        // Properties
+        public int Age
+        {
+            get { return empAge; }
+            set { empAge = value; }
         }
 
-        
+
         public string Name
         {
             get { return empName; }
@@ -27,7 +41,7 @@ namespace EduSharp.Unit5
             {
                 if (value.Length > 15)
                     {
-                        Console.WriteLine("Error! Name length exceeds 15 chars!");
+                        Console.WriteLine("Error! name length exceeds 15 chars!");
                     }
                     else
                     {
@@ -36,35 +50,35 @@ namespace EduSharp.Unit5
             }
         }
 
+        public int ID
+        {
+            get { return empID; }
+            set { empID = value; }
+        }
+
+        public float Pay
+        {
+            get { return currPay; }
+            set { currPay = value; }
+        }
+
         public string GetName()
         {
             return empName;
         }
 
-        //public void SetName(string name)
-        //{
-        //    if (name.Length > 15)
-        //    {
-        //        Console.WriteLine("Error! Name length exceeds 15 chars!");
-        //    }
-        //    else
-        //    {
-        //        empName = name;
-        //    }
-        //}
-        
-
-
+        // Methods
         public void GiveBonus(float amount)
         {
-            currPay += amount;
+            Pay += amount;
         }
 
         public void DisplayStats()
         {
-            Console.WriteLine("Name: {0}", empName);
-            Console.WriteLine("ID: {0}", empID);
-            Console.WriteLine("Pay: {0}",currPay);
+            Console.WriteLine("name: {0}", Name);
+            Console.WriteLine("id: {0}", ID);
+            Console.WriteLine("Age: {0}", Age);
+            Console.WriteLine("Pay: {0}",Pay);
         }
 
 

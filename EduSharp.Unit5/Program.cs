@@ -73,8 +73,13 @@ namespace EduSharp.Unit5
 
             Employee emp2 = new Employee();
             emp2.Name="Xena the warrior princess";
+            Console.WriteLine();
 
-
+            Employee joe = new Employee("Joe",30,458, 100000);
+            joe.DisplayStats();
+            Console.WriteLine();
+            joe.Age++;
+            joe.DisplayStats();
 
 
 
