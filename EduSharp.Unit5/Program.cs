@@ -13,25 +13,35 @@ namespace EduSharp.Unit5
             Console.WriteLine("***** Fun with Class Types *****\n");
 
             Car myCar = new Car();
-            myCar.petName = "Henry";
-            myCar.currSpeed = 10;
+            myCar.PetName = "Henry";
+            myCar.CurrSpeed = 10;
 
             for (int i = 0; i <= 10; i++)
             {
                 myCar.SpeedUp(5);
-                myCar.PrintState();
+                myCar.DisplayStats();
             }
             Console.WriteLine();
 
 
             Car chuck = new Car();
-            chuck.PrintState();
+            chuck.DisplayStats();
 
             Car mary = new Car("Mary");
-            mary.PrintState();
+            mary.DisplayStats();
 
-            Car daisy = new Car("Daisy", 75);
-            daisy.PrintState();
+            Car daisy = new Car();
+            daisy.PetName = "Daisy";
+            daisy.CurrSpeed = 55;
+            daisy.Color = "Red";
+            Console.WriteLine("Your car is named {0}? That's odd...", daisy.PetName);
+            daisy.DisplayStats();
+            Console.WriteLine();
+
+            Garage g = new Garage();
+            g.MyAuto = daisy;
+            Console.WriteLine("Number of Cars in garage: {0}", g.NumberOfCars);
+            Console.WriteLine("Your car named: {0}", g.MyAuto.PetName);
             Console.WriteLine();
 
 
