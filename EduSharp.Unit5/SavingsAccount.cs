@@ -5,7 +5,7 @@ namespace EduSharp.Unit5
     public class SavingsAccount
     {
         public double currBalance;
-        public static double currInterestRate;
+        private static double currInterestRate;
 
         public SavingsAccount(double balance)
         {
@@ -19,15 +19,21 @@ namespace EduSharp.Unit5
             currInterestRate = 0.04;
         }
 
-        public static void SetInterestRate(double newRate)
+        public static double InterestRate
         {
-            currInterestRate = newRate;
+            get { return currInterestRate;}
+            set { currInterestRate = value; }
         }
-
-        public static double GetInterestRate()
-        {
-            return currInterestRate;
-        }
+//
+//        public static void SetInterestRate(double newRate)
+//        {
+//            currInterestRate = newRate;
+//        }
+//
+//        public static double GetInterestRate()
+//        {
+//            return currInterestRate;
+//        }
 
     }
 }

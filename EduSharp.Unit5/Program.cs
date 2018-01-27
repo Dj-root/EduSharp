@@ -47,13 +47,13 @@ namespace EduSharp.Unit5
 
             Console.WriteLine("***** Fun with Static Data *****\n");
             SavingsAccount s1 = new SavingsAccount(50);
-            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.GetInterestRate());
+            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.InterestRate);
             SavingsAccount s2 = new SavingsAccount(100);
-            SavingsAccount.SetInterestRate(0.08);
-            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.GetInterestRate());
+            SavingsAccount.InterestRate=(0.08);
+            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.InterestRate);
 
             SavingsAccount s3 = new SavingsAccount(10000.75);
-            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.GetInterestRate());
+            Console.WriteLine("Interest Rate is: {0}", SavingsAccount.InterestRate);
             Console.WriteLine();
 
 
