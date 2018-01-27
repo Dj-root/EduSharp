@@ -90,6 +90,31 @@ namespace EduSharp.Unit5
             Console.WriteLine();
             joe.Age++;
             joe.DisplayStats();
+            Console.WriteLine();
+
+            Console.WriteLine("***** Fun with Object Init Syntax *****\n");
+            Point firstPoint = new Point();
+            firstPoint.X = 10;
+            firstPoint.Y = 10;
+            firstPoint.DisplayStats();
+
+            Point anotherPoint = new Point(20,20);
+            anotherPoint.DisplayStats();
+
+            Point finalPoint = new Point{X=30, Y=30};
+            finalPoint.DisplayStats();
+
+            Point goldPoint = new Point(PointColor.Gold){X=90, Y=20};
+            goldPoint.DisplayStats();
+            Console.WriteLine();
+
+            Rectangle myRect = new Rectangle
+            {
+                TopLeft = new Point {X = 10; Y = 10},
+                BottomRight = new Point {X = 200, Y = 200}
+            };
+
+
 
 
 

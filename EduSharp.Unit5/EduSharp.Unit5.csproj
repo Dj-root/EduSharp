@@ -46,8 +46,11 @@
     <Compile Include="Employee.cs" />
     <Compile Include="Garage.cs" />
     <Compile Include="Motorcycle.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="PointColor.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle.cs" />
     <Compile Include="SavingsAccount.cs" />
     <Compile Include="TimeUtilClass.cs" />
   </ItemGroup>
