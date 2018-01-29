@@ -2,7 +2,7 @@
 
 namespace EduSharp.Unit5
 {
-    public class Employee
+    partial class Employee
     {
         // Field data
         private string empName;
