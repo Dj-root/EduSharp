@@ -4,6 +4,18 @@ namespace EduSharp.Unit6
 {
     partial class Employee
     {
+		// Inner classes
+        public class BenefitPackage
+        {
+			public enum BenefitPackageLevel 
+			{
+			    Standard, Gold, Platinum
+			}
+            public double ComputePayDeduction()
+            {
+                return 125.0;
+            }
+        }
 
         // Field data
         protected string empName;

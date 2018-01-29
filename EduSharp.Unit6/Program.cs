@@ -30,7 +30,8 @@ namespace EduSharp.Unit6
             Manager chucky = new Manager("Chucky", 50, 92, 100000, "333-22-2332", 9000);
             double cost = chucky.GetBenefitCost();
 
-
+            Employee.BenefitPackage.BenefitPackageLevel myBenefitLevel =
+                Employee.BenefitPackage.BenefitPackageLevel.Platinum;
 
 
             Console.ReadLine();
