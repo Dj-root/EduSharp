@@ -6,27 +6,31 @@ namespace EduSharp.Unit6
     {
 
         // Field data
-        private string empName;
-        private int empID;
-        private float currPay;
-        private int empAge;
-        private string empSSN;
+        protected string empName;
+        protected int empID;
+        protected float currPay;
+        protected int empAge;
+        protected string empSSN;
+
+		protected BenefitPackage empBenefits = new BenefitPackage();
 
         // Constructors
         public Employee()
         {
         }
 
-        public Employee(string name, int empID, float currPay)
-            : this(name, 0, empID, currPay, null) { }
+        public Employee(string name, int age, int empID, float currPay, string ssn = null)
+            : this(name, age, empID, currPay)
+        {
+            this.empSSN = ssn;
+        }
 
-        public Employee(string name, int age, int id, float pay, string ssn = null)
+        public Employee(string name, int age, int id, float pay)
         {
             this.Name = name;
             this.ID = id;
             this.Age = age;
             this.Pay = pay;
-            this.empSSN = ssn;
         }
 
 

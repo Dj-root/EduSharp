@@ -6,6 +6,12 @@ namespace EduSharp.Unit6
     {
 
         // Properties
+        public BenefitPackage Benefits
+        {
+            get { return empBenefits;}
+            set { empBenefits = value; }
+        }
+
         public int Age
         {
             get { return empAge; }
@@ -64,6 +70,10 @@ namespace EduSharp.Unit6
             Console.WriteLine("Pay: {0}", Pay);
         }
 
+        public double GetBenefitCost()
+        {
+            return empBenefits.ComputePayDeduction();
+        }
 
     }
 }

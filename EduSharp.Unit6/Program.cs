@@ -27,6 +27,8 @@ namespace EduSharp.Unit6
             fred.Name = "Fred";
             fred.SalesNumber = 50;
 
+            Manager chucky = new Manager("Chucky", 50, 92, 100000, "333-22-2332", 9000);
+            double cost = chucky.GetBenefitCost();
 
 
 
