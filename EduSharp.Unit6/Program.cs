@@ -41,7 +41,28 @@ namespace EduSharp.Unit6
 
             Employee.BenefitPackage.BenefitPackageLevel myBenefitLevel =
                 Employee.BenefitPackage.BenefitPackageLevel.Platinum;
+            Console.WriteLine();
 
+
+            Console.WriteLine("***** Fun with Polymorphism *****\n");
+
+            Hexagon hex = new Hexagon("Beth");
+            hex.Draw();
+
+            Circle cir = new Circle("Cindy");
+            cir.Draw();
+            Console.WriteLine();
+
+            Shape[] myShapes =
+                {new Hexagon(), new Circle(), new Hexagon("Mick"), new Circle("Beth"), new Hexagon("Linda")};
+            foreach (Shape s in myShapes)
+            {
+                s.Draw();
+            }
+
+            ThreeDCircle o = new ThreeDCircle();
+            o.Draw();
+            ((Circle) o).Draw();
 
             Console.ReadLine();
         }
