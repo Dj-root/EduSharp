@@ -63,8 +63,77 @@ namespace EduSharp.Unit6
             ThreeDCircle o = new ThreeDCircle();
             o.Draw();
             ((Circle) o).Draw();
+            Console.WriteLine();
+
+            CastingExamples();
+            Console.WriteLine();
+
+            object [] things = new object[4];
+            things[0] = new Hexagon();
+            things[1] = false;
+            things[2] = new Manager("MoonUnit Zappa", 2, 3001, 20000, "101-11-1234", 1);
+            things[3] = "Last thing";
+
+            Console.WriteLine("Using \"AS\" keyword");
+            foreach (object item in things)
+            {
+                Hexagon h = item as Hexagon;
+                if (h==null)
+                {
+                    Console.WriteLine("Item \"{0}\" is not hexagon",item);
+                }
+                else
+                {
+                    h.Draw();
+                }
+            }
+
+            Console.WriteLine();
+
+
+            Console.WriteLine("***** Fun with System.Object *****\n");
+            Person p1 = new Person();
+            Console.WriteLine("ToString: {0}", p1.ToString());
+            Console.WriteLine("Hash code: {0}",p1.GetHashCode());
+            Console.WriteLine("Type: {0}", p1.GetType());
+
+            Person p2 = p1;
+            object o1 = p2;
+            if (o1.Equals(p1)&&p2.Equals(o1))
+            {
+                Console.WriteLine("Same instance!");
+            }
+
 
             Console.ReadLine();
+        }
+//        Other methods
+
+        static void CastingExamples()
+        {
+            object frank = new Manager("Frank Zappa",9,3000, 40000, "111-22-3334",5);
+            Employee moonUnit = new Manager("MoonUnit Zappa",2,3001,20000,"101-11-1234",1);
+            SalesPerson jill = new PTSalesPerson("Jill",843, 3002, 100000, "111-12-3456",90);
+
+            GivePromotion(moonUnit);
+            GivePromotion(jill);
+            GivePromotion((Manager)frank);
+        }
+
+        static void GivePromotion(Employee emp)
+        {
+            Console.WriteLine("{0} was promoted!", emp.Name);
+            if (emp is SalesPerson)
+            {
+                Console.WriteLine("{0} made {1} sale(s)!", emp.Name, ((SalesPerson)emp).SalesNumber);
+                Console.WriteLine();
+            }
+
+            if (emp is Manager)
+            {
+                Console.WriteLine("{0} had {1} stock options...", emp.Name, ((Manager)emp).StockOptions);
+                Console.WriteLine();
+            }
         }
     }
 }
