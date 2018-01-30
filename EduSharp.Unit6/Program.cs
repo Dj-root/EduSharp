@@ -27,8 +27,17 @@ namespace EduSharp.Unit6
             fred.Name = "Fred";
             fred.SalesNumber = 50;
 
+            //Employee
             Manager chucky = new Manager("Chucky", 50, 92, 100000, "333-22-2332", 9000);
             double cost = chucky.GetBenefitCost();
+            chucky.GiveBonus(300);
+            chucky.DisplayStats();
+            Console.WriteLine();
+
+            SalesPerson fran = new SalesPerson("Fran", 43,93, 3000, "932-23-4356",31);
+            fran.GiveBonus(200);
+            fran.DisplayStats();
+            Console.WriteLine();
 
             Employee.BenefitPackage.BenefitPackageLevel myBenefitLevel =
                 Employee.BenefitPackage.BenefitPackageLevel.Platinum;
