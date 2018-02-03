@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7", "EduSharp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7.CustomExceptions", "EduSharp.Unit7.CustomExceptions\EduSharp.Unit7.CustomExceptions.csproj", "{9DDA34CF-AF4D-4436-A2AD-F897FE3C7342}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7.MultExceptions", "EduSharp.Unit7.MultExceptions\EduSharp.Unit7.MultExceptions.csproj", "{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{9DDA34CF-AF4D-4436-A2AD-F897FE3C7342}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9DDA34CF-AF4D-4436-A2AD-F897FE3C7342}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9DDA34CF-AF4D-4436-A2AD-F897FE3C7342}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
