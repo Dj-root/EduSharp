@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EduSharp.Unit7
+namespace EduSharp.Unit7.CustomExceptions
 {
     public class Car
     {
@@ -41,10 +41,8 @@ namespace EduSharp.Unit7
                     //                    Console.WriteLine("{0} has overheated!", PetName);
                     //                    CurrentSpeed = 0;
                     //                    carIsDead = true;
-                    Exception ex = new Exception(string.Format("{0} has overheated!", PetName));
+                    CarIsDeadException ex = new CarIsDeadException(string.Format("{0} has overheated!", PetName), "You have a lead foot", DateTime.Now);
                     ex.HelpLink = "http://www.google.com";
-                    ex.Data.Add("TimeStamp", string.Format("The car exploded at {0}", DateTime.Now));
-                    ex.Data.Add("Cause", "You have a lead foot.");
                     throw ex;
                 }
                 else

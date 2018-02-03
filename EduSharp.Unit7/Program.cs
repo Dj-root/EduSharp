@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,18 @@ namespace EduSharp.Unit7
             catch (Exception e)
             {
                 Console.WriteLine("\n *** Error! ***");
-                Console.WriteLine("Method: {0}", e.TargetSite);
+                Console.WriteLine("Member name: {0}", e.TargetSite);
+                Console.WriteLine("Class defining member: {0}", e.TargetSite.DeclaringType);
+                Console.WriteLine("Member Type: {0}", e.TargetSite.MemberType);
                 Console.WriteLine("Message: {0}", e.Message);
                 Console.WriteLine("Source: {0}",e.Source);
+                Console.WriteLine("Stack: {0}",e.StackTrace);
+                Console.WriteLine("Help link: {0}", e.HelpLink);
+                Console.WriteLine("\n-> Custom Data:");
+                foreach (DictionaryEntry de in e.Data)
+                {
+                    Console.WriteLine("-> {0}: {1}",de.Key, de.Value);
+                }
             }
 
             Console.WriteLine("\n***** Out of Exception Logic *****");
