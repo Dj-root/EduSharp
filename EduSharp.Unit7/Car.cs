@@ -36,11 +36,12 @@ namespace EduSharp.Unit7
             else
             {
                 CurrentSpeed += delta;
-                if (CurrentSpeed>MaxSpeed)
+                if (CurrentSpeed >= MaxSpeed)
                 {
-                    Console.WriteLine("{0} has overheated!", PetName);
-                    CurrentSpeed = 0;
-                    carIsDead = true;
+                    //                    Console.WriteLine("{0} has overheated!", PetName);
+                    //                    CurrentSpeed = 0;
+                    //                    carIsDead = true;
+                    throw new Exception(string.Format("{0} has overheated!", PetName));
                 }
                 else
                 {
