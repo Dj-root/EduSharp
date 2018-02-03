@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit5", "EduSharp.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit6", "EduSharp.Unit6\EduSharp.Unit6.csproj", "{F36DED6A-838F-4FD4-8A4D-76B8E49BBA77}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7", "EduSharp.Unit7\EduSharp.Unit7.csproj", "{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F36DED6A-838F-4FD4-8A4D-76B8E49BBA77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F36DED6A-838F-4FD4-8A4D-76B8E49BBA77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F36DED6A-838F-4FD4-8A4D-76B8E49BBA77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
