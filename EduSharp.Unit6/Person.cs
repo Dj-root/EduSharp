@@ -21,6 +21,25 @@
             return myState;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj is Person && obj != null)
+            {
+                Person temp;
+                temp = (Person) obj;
+                if (temp.FirstName == this.FirstName
+                    && temp.LastName == this.LastName
+                    && temp.Age == this.Age)
+                {
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
 
+            return false;
+        }
     }
 }
