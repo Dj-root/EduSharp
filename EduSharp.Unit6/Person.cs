@@ -6,6 +6,8 @@
         public string LastName { get; set; } = "";
         public int Age { get; set; }
 
+        public string SSN { get; set; } = "";
+
         public Person(string fname, string lname, int personAge)
         {
             FirstName = fname;
@@ -38,8 +40,12 @@
                     return false;
                 }
             }
-
             return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return SSN.GetHashCode();
         }
     }
 }
