@@ -42,13 +42,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BitmapImage.cs" />
     <Compile Include="Circle.cs" />
     <Compile Include="Hexagon.cs" />
+    <Compile Include="IAdvancedDraw.cs" />
     <Compile Include="IDraw3D.cs" />
+    <Compile Include="IDrawable.cs" />
+    <Compile Include="IDrawToForm.cs" />
+    <Compile Include="IDrawToMemory.cs" />
+    <Compile Include="IDrawToPrinter.cs" />
     <Compile Include="IPointy.cs" />
+    <Compile Include="IPrintable.cs" />
+    <Compile Include="IShape.cs" />
+    <Compile Include="Octagon.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rectangle.cs" />
     <Compile Include="Shape.cs" />
+    <Compile Include="Square.cs" />
     <Compile Include="ThreeDCircle.cs" />
     <Compile Include="Triangle.cs" />
   </ItemGroup>

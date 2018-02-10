@@ -20,7 +20,7 @@ namespace EduSharp.Unit8
             CloneMe(unixOS);
             CloneMe(sqlCnn);
 
-//            ===================================================================
+            //            ===================================================================
             Console.WriteLine("\n***** First Look at Interfaces *****");
             Hexagon hex = new Hexagon();
             Console.WriteLine("Points: {0}", hex.Points);
@@ -29,7 +29,7 @@ namespace EduSharp.Unit8
             IPointy itfPt = null;
             try
             {
-                itfPt = (IPointy) c;
+                itfPt = (IPointy)c;
                 Console.WriteLine(itfPt.Points);
             }
             catch (InvalidCastException e)
@@ -49,13 +49,13 @@ namespace EduSharp.Unit8
                 Console.WriteLine("OOPS! Not pointy...");
             }
 
-            Shape[] myShapes = {new Hexagon(), new Circle(), new Triangle("Joe"), new Circle("JoJo")};
+            Shape[] myShapes = { new Hexagon(), new Circle(), new Triangle("Joe"), new Circle("JoJo") };
             for (int i = 0; i < myShapes.Length; i++)
             {
                 myShapes[i].Draw();
                 if (myShapes[i] is IPointy)
                 {
-                    Console.WriteLine("-> Points: {0}", ((IPointy) myShapes[i]).Points);
+                    Console.WriteLine("-> Points: {0}", ((IPointy)myShapes[i]).Points);
                 }
                 else
                 {
@@ -65,7 +65,7 @@ namespace EduSharp.Unit8
             }
             // ====================================================
             Console.WriteLine("***** Fun with Interfaces *****");
-            Shape[] myNewShapes = {new Hexagon(), new Circle(), new Triangle("Joe"), new Circle("JoJo"),};
+            Shape[] myNewShapes = { new Hexagon(), new Circle(), new Triangle("Joe"), new Circle("JoJo"), };
             for (int i = 0; i < myNewShapes.Length; i++)
             {
                 myNewShapes[i].Draw();
@@ -77,16 +77,51 @@ namespace EduSharp.Unit8
                 {
                     Console.WriteLine("-> {0}\'s not pointy!", myNewShapes[i].PetName);
                 }
-                if (myNewShapes[i]is IDraw3D)
+                if (myNewShapes[i] is IDraw3D)
                 {
-                    DrawIn3D((IDraw3D )myNewShapes[i]);
+                    DrawIn3D((IDraw3D)myNewShapes[i]);
                 }
             }
 
             Console.WriteLine("\nTesting the FindFirstPointyShape method");
             IPointy firstPointItem = FindFirstPointyShape(myNewShapes);
-            Console.WriteLine("The item has {0} points", firstPointItem.Points);
+            Console.WriteLine("The item has {0} points. Item type is {1}", firstPointItem.Points, firstPointItem.GetType());
 
+            //==========================================================
+            Console.WriteLine("\n***** Fun with Interface Name Clashes *****");
+            Octagon oct = new Octagon();
+
+            IDrawToForm itfForm = (IDrawToForm)oct;
+            itfForm.Draw();
+
+            //            IDrawToPrinter itfPrinter = (IDrawToPrinter) oct;
+            //            itfPrinter.Draw();
+
+            ((IDrawToPrinter)oct).Draw();
+
+            //            IDrawToMemory itfMemory = (IDrawToMemory) oct;
+            //            itfMemory.Draw();
+
+            if (oct is IDrawToMemory)
+            {
+                ((IDrawToMemory)oct).Draw();
+            }
+
+
+
+            Console.WriteLine("\n***** Simple Interface Hierarchy *****");
+            BitmapImage myBitmap = new BitmapImage();
+            myBitmap.Draw();
+            myBitmap.DrawInBoundingBox(10, 10, 100, 150);
+            myBitmap.DrawUpsideDown();
+
+            IAdvancedDraw iAdvDraw = myBitmap as IAdvancedDraw;
+            if (iAdvDraw != null)
+            {
+                iAdvDraw.DrawUpsideDown();
+            }
+
+            Console.WriteLine();
 
 
 
