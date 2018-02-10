@@ -83,6 +83,12 @@ namespace EduSharp.Unit8
                 }
             }
 
+            Console.WriteLine("\nTesting the FindFirstPointyShape method");
+            IPointy firstPointItem = FindFirstPointyShape(myNewShapes);
+            Console.WriteLine("The item has {0} points", firstPointItem.Points);
+
+
+
 
             Console.ReadLine();
         }
@@ -98,5 +104,21 @@ namespace EduSharp.Unit8
             Console.WriteLine("-> Drawing IDraw3D compatible type");
             itf3d.Draw3D();
         }
+
+        static IPointy FindFirstPointyShape(Shape[] shapes)
+        {
+            foreach (Shape s in shapes)
+            {
+                if (s is Shape)
+                {
+                    return s as IPointy;
+                }
+            }
+            return null;
+        }
+
+
+
+
     }
 }
