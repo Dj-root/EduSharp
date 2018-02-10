@@ -63,7 +63,25 @@ namespace EduSharp.Unit8
                 }
                 Console.WriteLine();
             }
-
+            // ====================================================
+            Console.WriteLine("***** Fun with Interfaces *****");
+            Shape[] myNewShapes = {new Hexagon(), new Circle(), new Triangle("Joe"), new Circle("JoJo"),};
+            for (int i = 0; i < myNewShapes.Length; i++)
+            {
+                myNewShapes[i].Draw();
+                if (myNewShapes[i] is IPointy)
+                {
+                    Console.WriteLine("-> Points: {0}", ((IPointy)myNewShapes[i]).Points);
+                }
+                else
+                {
+                    Console.WriteLine("-> {0}\'s not pointy!", myNewShapes[i].PetName);
+                }
+                if (myNewShapes[i]is IDraw3D)
+                {
+                    DrawIn3D((IDraw3D )myNewShapes[i]);
+                }
+            }
 
 
             Console.ReadLine();
@@ -73,6 +91,12 @@ namespace EduSharp.Unit8
         {
             object theClone = c.Clone();
             Console.WriteLine("Your clone is a: {0}", theClone.GetType().Name);
+        }
+
+        static void DrawIn3D(IDraw3D itf3d)
+        {
+            Console.WriteLine("-> Drawing IDraw3D compatible type");
+            itf3d.Draw3D();
         }
     }
 }
