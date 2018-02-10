@@ -121,7 +121,27 @@ namespace EduSharp.Unit8
                 iAdvDraw.DrawUpsideDown();
             }
 
-            Console.WriteLine();
+            // ==========================================
+            Console.WriteLine("\n***** Fun with IEnumerable / IEnumerator *****\n");
+            Garage carLot = new Garage();
+            foreach (Car cc  in carLot)
+            {
+                Console.WriteLine("{0} is going {1} MPH", cc.PetName, cc.CurrentSpeed);
+            }
+
+            Console.WriteLine("\n***** Fun with the Yield keyword *****\n");
+            foreach (Car cc in carLot)
+            {
+                Console.WriteLine("{0} is going {1} MPH", cc.PetName, cc.CurrentSpeed);
+            }
+            Console.WriteLine("\nPrinting in Reverse order\n");
+
+            foreach (Car cc in carLot.GetTheCars(true))
+            {
+                Console.WriteLine("{0} is going {1} MPH", cc.PetName, cc.CurrentSpeed);
+            }
+
+
 
 
 
