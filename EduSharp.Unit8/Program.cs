@@ -165,7 +165,42 @@ namespace EduSharp.Unit8
             Console.WriteLine("p3: {0}", p3);
             Console.WriteLine("p4: {0}", p4);
 
-            
+
+            // ===============================================
+            Console.WriteLine("\n***** Fun with Object Sorting *****\n");
+
+            Car[] myAutos = new Car[5];
+            myAutos[0] = new Car("Rusty", 80, 1);
+            myAutos[1] = new Car("Mary", 40,234);
+            myAutos[2] = new Car("Viper", 40, 34);
+            myAutos[3] = new Car("Mel", 40,4);
+            myAutos[4] = new Car("Chucky",40,5);
+
+            Console.WriteLine("Here is unordered set of cars:");
+            foreach (Car cc in myAutos)
+            {
+                Console.WriteLine("{0} \t{1}", cc.CarID, cc.PetName);
+            }
+
+            Array.Sort(myAutos);
+            Console.WriteLine();
+
+            Console.WriteLine("Here is ordered set of cars:");
+            foreach (Car cc in myAutos)
+            {
+                Console.WriteLine("{0} \t{1}", cc.CarID, cc.PetName);
+            }
+
+            Array.Sort(myAutos, Car.SortByPetName);
+            Console.WriteLine("\nOrdering by PetName:");
+            foreach (Car cc in myAutos)
+            {
+                Console.WriteLine("{0} \t{1}", cc.CarID, cc.PetName);
+            }
+
+
+
+
 
             Console.ReadLine();
         }

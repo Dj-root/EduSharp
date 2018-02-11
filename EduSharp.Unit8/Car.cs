@@ -1,10 +1,12 @@
 ﻿using System;
+using System.Collections;
 
 namespace EduSharp.Unit8
 {
-    public class Car
+    public class Car : IComparable
     {
         public const int MaxSpeed = 100;
+        public int CarID { get; set; }
 
         public int CurrentSpeed { get; set; } = 0;
         public string PetName { get; set; } = "";
@@ -13,6 +15,8 @@ namespace EduSharp.Unit8
 
         private Radio theMusicBox = new Radio();
 
+
+
         public Car()
         {
         }
@@ -20,6 +24,13 @@ namespace EduSharp.Unit8
         {
             CurrentSpeed = speed;
             PetName = name;
+        }
+
+        public Car(string name, int speed, int id)
+        {
+            CurrentSpeed = speed;
+            PetName = name;
+            CarID = id;
         }
 
         public void CrankTunes(bool state)
@@ -55,6 +66,39 @@ namespace EduSharp.Unit8
                     Console.WriteLine("=> Current speed = {0}", CurrentSpeed);
                 }
             }
+        }
+
+
+        public int CompareTo(object obj)
+        {
+            Car temp = obj as Car;
+            if (temp != null)
+            {
+                return this.CarID.CompareTo(temp.CarID);
+
+//                if (this.CarID > temp.CarID)
+//                {
+//                    return 1;
+//                }
+//
+//                if (this.CarID < temp.CarID)
+//                {
+//                    return -1;
+//                }
+//                else
+//                {
+//                    return 0;
+//                }
+            }
+            else
+            {
+                throw new ArgumentException("Parameter is not a Car!");
+            }
+        }
+
+        public static IComparer SortByPetName
+        {
+            get { return (IComparer) new PetNameComparer(); }
         }
     }
 }
