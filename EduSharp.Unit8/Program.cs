@@ -124,7 +124,7 @@ namespace EduSharp.Unit8
             // ==========================================
             Console.WriteLine("\n***** Fun with IEnumerable / IEnumerator *****\n");
             Garage carLot = new Garage();
-            foreach (Car cc  in carLot)
+            foreach (Car cc in carLot)
             {
                 Console.WriteLine("{0} is going {1} MPH", cc.PetName, cc.CurrentSpeed);
             }
@@ -141,9 +141,31 @@ namespace EduSharp.Unit8
                 Console.WriteLine("{0} is going {1} MPH", cc.PetName, cc.CurrentSpeed);
             }
 
+            // ===============================================
+            Console.WriteLine("\n***** Fun with Object Clonning *****\n");
+            Point p1 = new Point(50, 50);
+            Point p2 = p1;
+            p2.X = 0;
 
+            Console.WriteLine(p1);
+            Console.WriteLine(p2);
 
+            Point p3 = new Point(100, 100, "Jane");
+            Point p4 = (Point)p3.Clone();
 
+            Console.WriteLine("\nBefore Modification:");
+            Console.WriteLine("p3: {0}", p3);
+            Console.WriteLine("p4: {0}", p4);
+
+            p4.desc.PetName = "My new Point";
+            p4.X = 9;
+
+            Console.WriteLine("\nChanged p4.desc.petName and p4.X");
+            Console.WriteLine("After Modification:");
+            Console.WriteLine("p3: {0}", p3);
+            Console.WriteLine("p4: {0}", p4);
+
+            
 
             Console.ReadLine();
         }

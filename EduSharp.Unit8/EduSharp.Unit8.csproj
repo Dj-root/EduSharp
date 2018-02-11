@@ -58,6 +58,8 @@
     <Compile Include="IPrintable.cs" />
     <Compile Include="IShape.cs" />
     <Compile Include="Octagon.cs" />
+    <Compile Include="Point.cs" />
+    <Compile Include="PointDescription.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Radio.cs" />
