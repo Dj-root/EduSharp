@@ -32,7 +32,14 @@ namespace EduSharp.Unit8
         public object Clone()
         {
 //            return new Point(this.X, this.Y);
-            return this.MemberwiseClone();
+//            return this.MemberwiseClone();
+
+            Point newPoint = (Point) this.MemberwiseClone();
+
+            PointDescription currentDesc = new PointDescription();
+            currentDesc.PetName = this.desc.PetName;
+            newPoint.desc = currentDesc;
+            return newPoint;
         }
     }
 }
