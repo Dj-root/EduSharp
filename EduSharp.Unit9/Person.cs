@@ -19,7 +19,7 @@
         public override string ToString()
         {
             string myState;
-            myState = string.Format("Name: {0} {1}; Age: {2}]", FirstName, LastName, Age);
+            myState = string.Format("Name: {0} {1}; Age: {2}", FirstName, LastName, Age);
             return myState;
         }
 
