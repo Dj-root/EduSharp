@@ -3,7 +3,7 @@ using System.Collections;
 
 namespace EduSharp.Unit9
 {
-    public class Car : IComparable
+    public class Car : IComparable<Car>
     {
         public const int MaxSpeed = 100;
         public int CarID { get; set; }
@@ -68,32 +68,32 @@ namespace EduSharp.Unit9
             }
         }
 
-
-        public int CompareTo(object obj)
+        
+        int IComparable<Car>.CompareTo(Car obj)
         {
-            Car temp = obj as Car;
-            if (temp != null)
-            {
-                return this.CarID.CompareTo(temp.CarID);
+//            Car temp = obj as Car;
+//            if (temp != null)
+//            {
+//                return this.CarID.CompareTo(temp.CarID);
 
-//                if (this.CarID > temp.CarID)
-//                {
-//                    return 1;
-//                }
-//
-//                if (this.CarID < temp.CarID)
-//                {
-//                    return -1;
-//                }
-//                else
-//                {
-//                    return 0;
-//                }
-            }
-            else
-            {
-                throw new ArgumentException("Parameter is not a Car!");
-            }
+                if (this.CarID > obj.CarID)
+                {
+                    return 1;
+                }
+
+                if (this.CarID < obj.CarID)
+                {
+                    return -1;
+                }
+                else
+                {
+                    return 0;
+                }
+//            }
+//            else
+//            {
+//                throw new ArgumentException("Parameter is not a Car!");
+//            }
         }
 
 //        public static IComparer SortByPetName
