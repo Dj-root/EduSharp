@@ -70,6 +70,14 @@ namespace EduSharp.Unit9
             UseSortedSet();
             UseDictionary();
 
+            ObservCollection.ObsCollectionDemo();
+
+            //            =================================================
+            UseCustomGenericMethods();
+            UsingGenericStructs();
+
+
+
 
 
             Console.ReadLine();
@@ -238,5 +246,62 @@ namespace EduSharp.Unit9
             Person marge = peopleC["Marge"];
             Console.WriteLine(marge);
         }
+
+        static void Swap<T>(ref T a, ref T b)
+        {
+
+            Console.WriteLine("You sent the Swap() method {0}", typeof(T));
+
+            T temp;
+            temp = a;
+            a = b;
+            b = temp;
+        }
+
+        static void UseCustomGenericMethods()
+        {
+            Console.WriteLine("\n**** Fun with Custom Generic Methods *****\n");
+
+            int a = 10, b = 90;
+            Console.WriteLine("Before swap: {0}, {1}", a, b);
+            Swap(ref a, ref b);
+            Console.WriteLine("After swap: {0}, {1}", a, b);
+            Console.WriteLine();
+
+            string s1 = "Hello", s2 = "There";
+            Console.WriteLine("Before swap: {0}, {1}", s1, s2);
+            Swap(ref s1, ref s2);
+            Console.WriteLine("After swap: {0}, {1}", s1, s2);
+            Console.WriteLine();
+
+            bool b1 = true, b2 = false;
+            Console.WriteLine("Before swap: {0}, {1}", b1, b2);
+            Swap(ref b1, ref b2);
+            Console.WriteLine("After swap: {0}, {1}", b1, b2);
+            Console.WriteLine();
+
+            DisplayBaseClass<int>();
+            DisplayBaseClass<string>();
+            Console.WriteLine();
+        }
+
+        static void DisplayBaseClass<T>()
+        {
+            Console.WriteLine("Base class of {0} is {1}", typeof(T), typeof(T).BaseType);
+        }
+
+        static void UsingGenericStructs()
+        {
+            Console.WriteLine("\n**** Fun with Generic Structures *****\n");
+
+            GenPoint<int> p1 = new GenPoint<int>(10, 10);
+            GenPoint<double> p2 = new GenPoint<double>(5.4, 3.3);
+
+            Console.WriteLine(p1);
+                        p1.ResetPoint();
+            Console.WriteLine(p1);
+            Console.WriteLine(p2);
+        }
+
     }
 }

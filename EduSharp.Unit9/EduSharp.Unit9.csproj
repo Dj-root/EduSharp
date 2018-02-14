@@ -45,7 +45,9 @@
     <Compile Include="Car.cs" />
     <Compile Include="CarCollection.cs" />
     <Compile Include="CarIsDeadException.cs" />
+    <Compile Include="GenPoint.cs" />
     <Compile Include="IntCollection.cs" />
+    <Compile Include="ObservCollection.cs" />
     <Compile Include="Person.cs" />
     <Compile Include="PersonCollection.cs" />
     <Compile Include="Point.cs" />
