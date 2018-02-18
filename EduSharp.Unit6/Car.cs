@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EduSharp.Unit6
+namespace EduSharp.Troelsen.Unit6
 {
     class Car
     {

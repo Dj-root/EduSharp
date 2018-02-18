@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 
-namespace EduSharp.Unit9
+namespace EduSharp.Troelsen.Unit9
 {
     class SortPeopleByAge : IComparer<Person>
     {

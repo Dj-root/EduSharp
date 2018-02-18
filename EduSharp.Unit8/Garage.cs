@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace EduSharp.Unit8
+namespace EduSharp.Troelsen.Unit8
 {
     public class Garage : IEnumerable
     {

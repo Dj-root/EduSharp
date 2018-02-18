@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EduSharp.Unit6
+namespace EduSharp.Troelsen.Unit6
 {
     abstract class Shape
     {

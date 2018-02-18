@@ -1,4 +1,4 @@
-﻿namespace EduSharp.Unit10
+﻿namespace EduSharp.Troelsen.Unit10
 {
 
     public delegate int BinaryOp(int x, int y);

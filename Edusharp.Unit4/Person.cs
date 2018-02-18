@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Edusharp.Unit4
+namespace Edusharp.Troelsen.Unit4
 {
     public class Person
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EduSharp.Unit7
+namespace EduSharp.Troelsen.Unit7
 {
     public class Radio
     {

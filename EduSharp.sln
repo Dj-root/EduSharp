@@ -3,25 +3,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit3", "FirstPrg\EduSharp.Unit3.csproj", "{D7FF698E-A02A-4C1C-B2C9-FB5A0D95F8A4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit3", "FirstPrg\EduSharp.Troelsen.Unit3.csproj", "{D7FF698E-A02A-4C1C-B2C9-FB5A0D95F8A4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edusharp.Unit4", "Edusharp.Unit4\Edusharp.Unit4.csproj", "{D1ABF8EC-F28B-4031-84F8-D4DC673FCDFC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Edusharp.Troelsen.Unit4", "Edusharp.Unit4\Edusharp.Troelsen.Unit4.csproj", "{D1ABF8EC-F28B-4031-84F8-D4DC673FCDFC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit5", "EduSharp.Unit5\EduSharp.Unit5.csproj", "{2E19990F-770F-4445-A781-DC7006A2A94D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit5", "EduSharp.Unit5\EduSharp.Troelsen.Unit5.csproj", "{2E19990F-770F-4445-A781-DC7006A2A94D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit6", "EduSharp.Unit6\EduSharp.Unit6.csproj", "{F36DED6A-838F-4FD4-8A4D-76B8E49BBA77}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit6", "EduSharp.Unit6\EduSharp.Troelsen.Unit6.csproj", "{F36DED6A-838F-4FD4-8A4D-76B8E49BBA77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7", "EduSharp.Unit7\EduSharp.Unit7.csproj", "{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit7", "EduSharp.Unit7\EduSharp.Troelsen.Unit7.csproj", "{C608ADD5-DFB6-44B1-835E-73A22C30EFE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7.CustomExceptions", "EduSharp.Unit7.CustomExceptions\EduSharp.Unit7.CustomExceptions.csproj", "{9DDA34CF-AF4D-4436-A2AD-F897FE3C7342}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit7.CustomExceptions", "EduSharp.Unit7.CustomExceptions\EduSharp.Troelsen.Unit7.CustomExceptions.csproj", "{9DDA34CF-AF4D-4436-A2AD-F897FE3C7342}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit7.MultExceptions", "EduSharp.Unit7.MultExceptions\EduSharp.Unit7.MultExceptions.csproj", "{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit7.MultExceptions", "EduSharp.Unit7.MultExceptions\EduSharp.Troelsen.Unit7.MultExceptions.csproj", "{C70D48B0-E68C-4899-B4C1-94FBBA1D6E89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit8", "EduSharp.Unit8\EduSharp.Unit8.csproj", "{95D1F72B-FC58-46AF-B623-D491638C1351}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit8", "EduSharp.Unit8\EduSharp.Troelsen.Unit8.csproj", "{95D1F72B-FC58-46AF-B623-D491638C1351}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit9", "EduSharp.Unit9\EduSharp.Unit9.csproj", "{6242A305-7596-43F2-A785-03E43B73CD11}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit9", "EduSharp.Unit9\EduSharp.Troelsen.Unit9.csproj", "{6242A305-7596-43F2-A785-03E43B73CD11}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Unit10", "EduSharp.Unit10\EduSharp.Unit10.csproj", "{C46E92A0-7FA3-48C4-9E77-EAFDC3013FBA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit10", "EduSharp.Unit10\EduSharp.Troelsen.Unit10.csproj", "{C46E92A0-7FA3-48C4-9E77-EAFDC3013FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

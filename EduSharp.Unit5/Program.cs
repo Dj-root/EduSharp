@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EduSharp.Unit5
+namespace EduSharp.Troelsen.Unit5
 {
     class Program
     {

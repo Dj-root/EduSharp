@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EduSharp.Unit5
+namespace EduSharp.Troelsen.Unit5
 {
     partial class Employee
     {

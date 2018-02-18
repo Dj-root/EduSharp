@@ -1,4 +1,4 @@
-﻿namespace EduSharp.Unit6
+﻿namespace EduSharp.Troelsen.Unit6
 {
     class Person
     {

@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Edusharp.Unit4
+namespace Edusharp.Troelsen.Unit4
 {
     class Program
     {

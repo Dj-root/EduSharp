@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 
-namespace EduSharp.Unit9
+namespace EduSharp.Troelsen.Unit9
 {
     public class ObservCollection
     {

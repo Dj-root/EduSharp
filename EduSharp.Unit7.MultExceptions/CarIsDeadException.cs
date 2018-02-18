@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EduSharp.Unit7.MultExceptions
+namespace EduSharp.Troelsen.Unit7.MultExceptions
 {
     public class CarIsDeadException : ApplicationException
     {

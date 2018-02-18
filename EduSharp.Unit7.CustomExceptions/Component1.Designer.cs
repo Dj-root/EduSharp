@@ -1,4 +1,4 @@
-﻿namespace EduSharp.Unit7.CustomExceptions
+﻿namespace EduSharp.Troelsen.Unit7.CustomExceptions
 {
     partial class Component1
     {

@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EduSharp.Unit9
+namespace EduSharp.Troelsen.Unit9
 {
     class Program
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace EduSharp.Unit3
+namespace EduSharp.Troelsen.Unit3
 {
     class ProgramUnit3
     {

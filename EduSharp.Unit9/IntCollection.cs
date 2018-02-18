@@ -1,6 +1,6 @@
 ﻿using System.Collections;
 
-namespace EduSharp.Unit9
+namespace EduSharp.Troelsen.Unit9
 {
     public class IntCollection:IEnumerable
     {

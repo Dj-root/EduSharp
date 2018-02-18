@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace EduSharp.Unit8
+namespace EduSharp.Troelsen.Unit8
 {
     public class CarIsDeadException : ApplicationException
     {

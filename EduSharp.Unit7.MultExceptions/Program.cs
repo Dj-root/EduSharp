@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EduSharp.Unit7.MultExceptions
+namespace EduSharp.Troelsen.Unit7.MultExceptions
 {
     class Program
     {
