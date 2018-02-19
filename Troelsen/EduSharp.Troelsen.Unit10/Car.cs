@@ -12,7 +12,7 @@ namespace EduSharp.Troelsen.Unit10
 
         public Car() { }
 
-        public Car(string petName,  int maxSpeed, int currentSpeed)
+        public Car(string petName, int maxSpeed, int currentSpeed)
         {
             CurrentSpeed = currentSpeed;
             MaxSpeed = maxSpeed;
@@ -25,7 +25,21 @@ namespace EduSharp.Troelsen.Unit10
 
         public void RegisterWithCarEngine(CarEngineHandler methodToCall)
         {
-            listOfHandlers = methodToCall;
+            //            listOfHandlers = methodToCall;
+            if (listOfHandlers == null)
+            {
+                listOfHandlers = methodToCall;
+            }
+            else
+            {
+                Delegate.Combine(listOfHandlers, methodToCall);
+            }
+        }
+
+        public void UnRegisterWithCarEngine(CarEngineHandler methodToCall)
+        {
+            listOfHandlers -= methodToCall;
+
         }
 
         public void Accelerate(int delta)
@@ -44,7 +58,7 @@ namespace EduSharp.Troelsen.Unit10
                 {
                     listOfHandlers("Careful buddy! Gonna blow!");
                 }
-                if(CurrentSpeed>=MaxSpeed)
+                if (CurrentSpeed >= MaxSpeed)
                 {
                     carIsDead = true;
                 }

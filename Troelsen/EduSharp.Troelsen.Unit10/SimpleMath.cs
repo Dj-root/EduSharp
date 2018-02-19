@@ -18,5 +18,10 @@
         {
             return a * a;
         }
+
+        public static string SumToString(int x, int y)
+        {
+            return (x + y).ToString();
+        }
     }
 }
