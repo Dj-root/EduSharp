@@ -13,5 +13,10 @@
         {
             return x - y;
         }
+
+        public static int SquareNumber(int a)
+        {
+            return a * a;
+        }
     }
 }
