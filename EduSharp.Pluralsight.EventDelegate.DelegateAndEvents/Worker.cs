@@ -19,6 +19,7 @@ namespace EduSharp.Pluralsight.EventDelegate.DelegateAndEvents
         {
             for (int i = 0; i < hours; i++)
             {
+                System.Threading.Thread.Sleep(500);
                 OnWorkPerformed(i+1, workType);
             }
             OnWorkCompleted();
