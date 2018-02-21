@@ -6,42 +6,58 @@ using System.Threading.Tasks;
 
 namespace EduSharp.Pluralsight.EventDelegate.DelegateAndEvents
 {
-    public delegate void WorkPerformedHandler(int hours, WorkType workType);
-
+    
     class Program
     {
         static void Main(string[] args)
         {
-            WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
-            WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
+            //WorkPerformedHandler del1 = new WorkPerformedHandler(WorkPerformed1);
+            //WorkPerformedHandler del2 = new WorkPerformedHandler(WorkPerformed2);
+            //WorkPerformedHandler del3 = new WorkPerformedHandler(WorkPerformed3);
 
-            DoWork(del1);
+            //del1 += del2 + del3;
+
+            //int finalHours =  del1(10, WorkType.GoToMeetings);
+            //Console.WriteLine(finalHours);
+
+            var worker = new Worker();
 
             Console.Read();
 
         }
 
-        static void WorkPerformed1(int hours, WorkType workType)
-        {
-            Console.WriteLine("WorkPerformed1 called {0}", hours);
-        }
 
-        static void WorkPerformed2(int hours, WorkType workType)
-        {
-            Console.WriteLine("WorkPerformed2 called {0}",hours);
-        }
 
-        static void DoWork(WorkPerformedHandler del)
-        {
-            del(5, WorkType.GoToMeetings);
-        }
+
+        //static int WorkPerformed1(int hours, WorkType workType)
+        //{
+        //    Console.WriteLine("WorkPerformed1 called {0}", hours);
+        //    return hours + 1;
+        //}
+
+        //static int WorkPerformed2(int hours, WorkType workType)
+        //{
+        //    Console.WriteLine("WorkPerformed2 called {0}", hours);
+        //    return hours + 2;
+        //}
+
+        //static int WorkPerformed3(int hours, WorkType workType)
+        //{
+        //    Console.WriteLine("WorkPerformed3 called {0}", hours);
+        //    return hours + 3;
+        //}
+
+        //static void DoWork(WorkPerformedHandler del)
+        //{
+        //    del(5, WorkType.GoToMeetings);
+        //}
     }
 
 
     public enum WorkType
     {
         GoToMeetings,
-        Golf, 
+        Golf,
         GenerateReports
     }
 }
