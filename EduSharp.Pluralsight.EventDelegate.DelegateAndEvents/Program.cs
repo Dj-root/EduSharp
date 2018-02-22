@@ -13,15 +13,45 @@ namespace EduSharp.Pluralsight.EventDelegate.DelegateAndEvents
         static void Main(string[] args)
         {
             Console.WriteLine("***** Fun with Lambdas *****\n");
-
+            Console.WriteLine("Lambdas:");
             BizRulesDelegate addDel = (x, y) => x + y;
             BizRulesDelegate multiplyDel = (x, y) => x * y;
 
-
             var data = new ProcessData();
-            data.Process(2,3, addDel);
+            data.Process(2, 3, addDel);
             data.Process(2, 3, multiplyDel);
 
+            Console.WriteLine("\nAction<T>:");
+            Action<int, int> myAction = (x, y) => Console.WriteLine(x + y);
+            Action<int, int> myMultiplyAction = (x, y) => Console.WriteLine(x * y);
+            data.ProcessAction(2, 3, myAction);
+            data.ProcessAction(2, 3, myMultiplyAction);
+
+            Console.WriteLine("\nFunc<t>:");
+            Func<int, int, int> funcAddDel = (x, y) => x + y;
+            Func<int, int, int> funcMultiplyDel = (x, y) => x * y;
+
+            data.ProcessFunc(3, 2, funcAddDel);
+            data.ProcessFunc(3, 2, funcMultiplyDel);
+
+
+            Console.WriteLine("\nLambdas and Func<T>");
+            var custs = new List<Customer>()
+            {
+                new Customer {City = "Phoenix", FirstName = "John", LastName = "Doe", ID = 1},
+                new Customer {City = "Phoenix", FirstName = "Jane", LastName = "Doe", ID = 500},
+                new Customer {City = "Seattle", FirstName = "Suki", LastName = "Pizzoro", ID = 3},
+                new Customer {City = "New York City", FirstName = "Michelle", LastName = "Smith", ID = 4}
+            };
+
+            var chxCusts = custs
+                .Where(c => c.City == "Phoenix" && c.ID < 500)
+                .OrderBy(c => c.FirstName);
+
+            foreach (var cust in chxCusts)
+            {
+                Console.WriteLine(cust.FirstName);
+            }
 
 
             Console.WriteLine("\n***** Fun with Delegates *****\n");

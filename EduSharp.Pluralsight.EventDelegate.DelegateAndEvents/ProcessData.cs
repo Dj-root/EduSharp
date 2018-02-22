@@ -13,5 +13,17 @@ namespace EduSharp.Pluralsight.EventDelegate.DelegateAndEvents
             var result = del(x, y);
             Console.WriteLine(result);
         }
+
+        public void ProcessAction(int x, int y, Action<int, int> action)
+        {
+            action(x, y);
+            Console.WriteLine("Action has been proceed");
+        }
+
+        public void ProcessFunc(int x, int y, Func<int, int, int> del)
+        {
+            var result = del(x, y);
+            Console.WriteLine(result);
+        }
     }
 }
