@@ -68,7 +68,6 @@ namespace EduSharp.Pluralsight.EventDelegate.DelegateAndEvents
             //            worker.WorkPerformed += new EventHandler<WorkPerformedEventArgs>(Worker_WorkPerformed);
             //            worker.WorkCompleted+= new EventHandler(Worker_WorkCompleted);
 
-
             //            worker.WorkPerformed += Worker_WorkPerformed;
             worker.WorkPerformed += (s, e) => Console.WriteLine("Hours worked: " + e.Hours + " " + e.WorkType);
 
