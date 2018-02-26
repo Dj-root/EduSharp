@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using EduSharp.Unit10;
 
 namespace EduSharp.Troelsen.Unit10
 {
@@ -91,12 +92,141 @@ namespace EduSharp.Troelsen.Unit10
             Console.WriteLine(sum);
 
 
+            //            
+            //            Console.WriteLine("\n***** Ahg! No Encapsulation *****\n");
+            //            CarEvent myCar = new CarEvent();
+            //            myCar.listOfHandlers = new CarEvent.CarEngineHandler(CallWhenExploded);
+            //            myCar.Accelerate(10);
+            //            myCar.listOfHandlers = new CarEvent.CarEngineHandler(CallHereToo);
+            //            myCar.Accelerate(10);
+            //
+            //            myCar.listOfHandlers.Invoke("hee, hee, hee...");
+            //
+            //
+            //            Console.WriteLine("\n***** Fun with Events *****\n");
+            //
+            //            CarEvent cc1 = new CarEvent("SlugBug",100,10);
+            //            cc1.AboutToBlow += new CarEvent.CarEngineHandler(CarIsAlmostDoomed);
+            //            cc1.AboutToBlow += new CarEvent.CarEngineHandler(CarAboutToBlow);
+            //            cc1.Exploded += CarExploded;
+            //
+            ////            CarEvent.CarEngineHandler d = new CarEvent.CarEngineHandler(CarExploded);
+            //
+            //            Console.WriteLine("\n***** Speeding up *****\n");
+            //            for (int i = 0; i < 6; i++)
+            //            {
+            //                c1.Accelerate(20);
+            //            }
+            //
+            //            cc1.Exploded -= CarExploded;
+            //
+            //            Console.WriteLine("\n***** Speeding up *****\n");
+            //            for (int i = 0; i < 6; i++)
+            //            {
+            //                c1.Accelerate(20);
+            //            }
+
+
+            Console.WriteLine("\n***** Fun with Lambdas *****\n");
+            TraditionalDelegateSyntax();
+            AnonymousMethodSyntax();
+            LambdaExpressionSyntax();
+
 
 
 
             Console.ReadLine();
         }
 
+        public static void TraditionalDelegateSyntax()
+        {
+            List<int> list = new List<int>();
+            list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });
+
+            Predicate<int> callback = IsEvenNumber;
+            List<int> evenNumbers = list.FindAll(callback);
+
+            Console.WriteLine("Here is your even numbers:");
+            foreach (int evenNumber in evenNumbers)
+            {
+                Console.WriteLine("{0}\t", evenNumber);
+            }
+
+            Console.WriteLine();
+        }
+
+        public static void AnonymousMethodSyntax()
+        {
+            List<int> list = new List<int>();
+            list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });
+
+            List<int> evenNumbers = list.FindAll(delegate (int i) { return (i % 2) == 0; });
+
+            Console.WriteLine("Here is your even numbers:");
+            foreach (int evenNumber in evenNumbers)
+            {
+                Console.WriteLine("{0}\t", evenNumber);
+            }
+
+            Console.WriteLine();
+        }
+
+        public static void LambdaExpressionSyntax()
+        {
+            List<int> list = new List<int>();
+            list.AddRange(new int[] { 20, 1, 4, 8, 9, 44 });
+
+            List<int> evenNumbers = list.FindAll(i=>(i%2)==0);
+
+            Console.WriteLine("Here is your even numbers:");
+            foreach (int evenNumber in evenNumbers)
+            {
+                Console.WriteLine("{0}\t", evenNumber);
+            }
+
+            Console.WriteLine();
+        }
+
+
+        static bool IsEvenNumber(int i)
+        {
+            return (i % 2) == 0;
+        }
+
+        static void NewCar_AboutToBlow(string msg)
+        {
+            //            throw NotImplementedException();
+        }
+
+        public static void CarAboutToBlow(object sender, CarEventArgs e)
+        {
+            if (sender is CarEvent)
+            {
+                CarEvent c = (CarEvent)sender;
+                Console.WriteLine("Critical Message from {0}: {1}", c.PetName, e.msg);
+            }
+            //            Console.WriteLine("{0} says: {1}",sender, e.msg);
+        }
+
+        public static void CarIsAlmostDoomed(string msg)
+        {
+            Console.WriteLine("=> Critical Message from Car: {0}", msg);
+        }
+
+        public static void CarExploded(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+
+        static void CallWhenExploded(string msg)
+        {
+            Console.WriteLine(msg);
+        }
+
+        static void CallHereToo(string msg)
+        {
+            Console.WriteLine(msg);
+        }
 
         static void DisplayMessage(string msg, ConsoleColor txtColor, int printCount)
         {
