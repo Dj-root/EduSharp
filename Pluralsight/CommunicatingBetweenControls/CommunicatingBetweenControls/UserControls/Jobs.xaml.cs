@@ -42,7 +42,7 @@ namespace CommunicatingBetweenControls.UserControls
 
         private void JobsComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
+            Mediator.GetInstance().OnJobChanged(this,(Job) JobsComboBox.SelectedItem);
         }
     }
 }
