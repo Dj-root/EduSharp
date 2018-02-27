@@ -29,6 +29,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommunicatingBetweenControl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheadsAndDelegates", "Pluralsight\AsyncDelegatesAndThreading\AsyncDelegatesAndThreading\TheadsAndDelegates.csproj", "{0D0E29E4-AE37-4058-8159-E7D67C8DDB9C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit11", "Troelsen\EduSharp.Troelsen.Unit11\EduSharp.Troelsen.Unit11.csproj", "{F83C912C-A2C1-415C-B5D9-67A65FB7DDF5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +89,10 @@ Global
 		{0D0E29E4-AE37-4058-8159-E7D67C8DDB9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D0E29E4-AE37-4058-8159-E7D67C8DDB9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D0E29E4-AE37-4058-8159-E7D67C8DDB9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F83C912C-A2C1-415C-B5D9-67A65FB7DDF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F83C912C-A2C1-415C-B5D9-67A65FB7DDF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F83C912C-A2C1-415C-B5D9-67A65FB7DDF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F83C912C-A2C1-415C-B5D9-67A65FB7DDF5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

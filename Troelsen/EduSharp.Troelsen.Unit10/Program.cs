@@ -91,50 +91,18 @@ namespace EduSharp.Troelsen.Unit10
             string sum = funcTarget2(90, 300);
             Console.WriteLine(sum);
 
-
-            //            
-            //            Console.WriteLine("\n***** Ahg! No Encapsulation *****\n");
-            //            CarEvent myCar = new CarEvent();
-            //            myCar.listOfHandlers = new CarEvent.CarEngineHandler(CallWhenExploded);
-            //            myCar.Accelerate(10);
-            //            myCar.listOfHandlers = new CarEvent.CarEngineHandler(CallHereToo);
-            //            myCar.Accelerate(10);
-            //
-            //            myCar.listOfHandlers.Invoke("hee, hee, hee...");
-            //
-            //
-            //            Console.WriteLine("\n***** Fun with Events *****\n");
-            //
-            //            CarEvent cc1 = new CarEvent("SlugBug",100,10);
-            //            cc1.AboutToBlow += new CarEvent.CarEngineHandler(CarIsAlmostDoomed);
-            //            cc1.AboutToBlow += new CarEvent.CarEngineHandler(CarAboutToBlow);
-            //            cc1.Exploded += CarExploded;
-            //
-            ////            CarEvent.CarEngineHandler d = new CarEvent.CarEngineHandler(CarExploded);
-            //
-            //            Console.WriteLine("\n***** Speeding up *****\n");
-            //            for (int i = 0; i < 6; i++)
-            //            {
-            //                c1.Accelerate(20);
-            //            }
-            //
-            //            cc1.Exploded -= CarExploded;
-            //
-            //            Console.WriteLine("\n***** Speeding up *****\n");
-            //            for (int i = 0; i < 6; i++)
-            //            {
-            //                c1.Accelerate(20);
-            //            }
-
-
             Console.WriteLine("\n***** Fun with Lambdas *****\n");
             TraditionalDelegateSyntax();
             AnonymousMethodSyntax();
             LambdaExpressionSyntax();
 
+            Console.WriteLine("\n***** Fun with Lambdas with Params*****\n");
+            SimpleMath mm = new SimpleMath();
+            mm.SetMathHendler((msg, rslt)=>{ Console.WriteLine("Message: {0}, Result: {1}", msg, rslt); });
 
+            mm.AddLambda(10,10);
 
-
+            
             Console.ReadLine();
         }
 
@@ -149,7 +117,7 @@ namespace EduSharp.Troelsen.Unit10
             Console.WriteLine("Here is your even numbers:");
             foreach (int evenNumber in evenNumbers)
             {
-                Console.WriteLine("{0}\t", evenNumber);
+                Console.Write("{0}\t", evenNumber);
             }
 
             Console.WriteLine();
@@ -165,7 +133,7 @@ namespace EduSharp.Troelsen.Unit10
             Console.WriteLine("Here is your even numbers:");
             foreach (int evenNumber in evenNumbers)
             {
-                Console.WriteLine("{0}\t", evenNumber);
+                Console.Write("{0}\t", evenNumber);
             }
 
             Console.WriteLine();
@@ -181,7 +149,7 @@ namespace EduSharp.Troelsen.Unit10
             Console.WriteLine("Here is your even numbers:");
             foreach (int evenNumber in evenNumbers)
             {
-                Console.WriteLine("{0}\t", evenNumber);
+                Console.Write("{0}\t", evenNumber);
             }
 
             Console.WriteLine();
