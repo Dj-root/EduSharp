@@ -1,4 +1,0 @@
-﻿namespace EduSharp.Unit6
-{
-    
-}
