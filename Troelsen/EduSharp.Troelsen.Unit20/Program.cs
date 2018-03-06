@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,7 @@ namespace EduSharp.Troelsen.Unit20
             //            ModifyAppDirectory();
 
             Console.WriteLine("***** Fun with Directory *****\n");
+            ModifyAppDirectory();
             FunWithDirectoryType();
 
             Console.WriteLine("***** Fun with DriveInfo *****\n");
@@ -40,16 +42,61 @@ namespace EduSharp.Troelsen.Unit20
             FunWithBinWriter();
 
 
-            FileWatcher.Watcher();
+//            FileWatcher.Watcher();
+
+
+            Console.WriteLine("***** Fun With Object Serialization *****\n");
+            BinSerialize();
+            BinDeserialize("CarData.dat");
+
+
+
+
 
             Console.ReadLine();
         }
 
 
 
+        static void BinDeserialize(string fileName)
+        {
+            string path = @"C:\MyFolder\";
+            string fullFileName = path + fileName;
 
+            BinaryFormatter bf = new BinaryFormatter();
 
-        
+            using (Stream fStream = File.OpenRead(fullFileName))
+            {
+                JamesBondCar carFromDisk = (JamesBondCar) bf.Deserialize(fStream);
+                Console.WriteLine("Can this car fly? : {0}", carFromDisk.canFly);
+            }
+        }
+
+        static void BinSerialize()
+        {
+            JamesBondCar jbc = new JamesBondCar();
+            jbc.canFly = true;
+            jbc.canSubmerge = false;
+            jbc.theRadio.stationPresets = new double[] { 89.3, 105.1, 97.1 };
+            jbc.theRadio.hasTweeters = true;
+
+            SaveAsBinary(jbc, "CarData.dat");
+        }
+
+        static void SaveAsBinary(object objGraph, string fileName)
+        {
+            string path = @"C:\MyFolder\";
+            string fullFileName = path + fileName;
+            Console.WriteLine(fullFileName);
+            BinaryFormatter bf = new BinaryFormatter();
+
+            using (Stream fStream = new FileStream(fullFileName, FileMode.Create, FileAccess.Write, FileShare.None))
+            {
+                bf.Serialize(fStream, objGraph);
+            }
+
+            Console.WriteLine("=> Saved car in binary format!");
+        }
 
         static void FunWithBinWriter()
         {
