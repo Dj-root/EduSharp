@@ -37,6 +37,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit20", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Nutshell.Chapter4.Delegates", "Nutshell\EduSharp.Nutshell.Chapter4.Delegates\EduSharp.Nutshell.Chapter4.Delegates.csproj", "{225C021C-543E-414E-AD69-D117FA19D7EB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit19", "Troelsen\EduSharp.Troelsen.Unit19\EduSharp.Troelsen.Unit19.csproj", "{3AE6F287-B25E-406D-993D-1BA0BCECC7BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -111,6 +113,10 @@ Global
 		{225C021C-543E-414E-AD69-D117FA19D7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{225C021C-543E-414E-AD69-D117FA19D7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{225C021C-543E-414E-AD69-D117FA19D7EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3AE6F287-B25E-406D-993D-1BA0BCECC7BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AE6F287-B25E-406D-993D-1BA0BCECC7BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AE6F287-B25E-406D-993D-1BA0BCECC7BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AE6F287-B25E-406D-993D-1BA0BCECC7BE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
