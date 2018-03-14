@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2036
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit3", "Troelsen\Edusharp.Troelsen.Unit3\EduSharp.Troelsen.Unit3.csproj", "{D7FF698E-A02A-4C1C-B2C9-FB5A0D95F8A4}"
 EndProject
@@ -34,6 +34,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit12", "Troelsen\EduSharp.Troelsen.Unit12\EduSharp.Troelsen.Unit12.csproj", "{D924B55D-8506-4272-8AD3-C1B6E6361CF3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit20", "Troelsen\EduSharp.Troelsen.Unit20\EduSharp.Troelsen.Unit20.csproj", "{3284E2CC-D4DB-4205-9453-CB2663173369}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Nutshell.Chapter4.Delegates", "Nutshell\EduSharp.Nutshell.Chapter4.Delegates\EduSharp.Nutshell.Chapter4.Delegates.csproj", "{225C021C-543E-414E-AD69-D117FA19D7EB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -105,6 +107,10 @@ Global
 		{3284E2CC-D4DB-4205-9453-CB2663173369}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3284E2CC-D4DB-4205-9453-CB2663173369}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3284E2CC-D4DB-4205-9453-CB2663173369}.Release|Any CPU.Build.0 = Release|Any CPU
+		{225C021C-543E-414E-AD69-D117FA19D7EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{225C021C-543E-414E-AD69-D117FA19D7EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{225C021C-543E-414E-AD69-D117FA19D7EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{225C021C-543E-414E-AD69-D117FA19D7EB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
