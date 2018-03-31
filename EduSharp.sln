@@ -41,6 +41,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit19", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit19.Parallel", "Troelsen\EduSharp.Troelsen.Unit19.Parallel\EduSharp.Troelsen.Unit19.Parallel.csproj", "{CC8B6F04-2675-4346-8EE8-E1E09F7C6DAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Pluralsight.ADO.WinDemo", "Pluralsight\ADO\EduSharp.Pluralsight.ADO.WinDemo\EduSharp.Pluralsight.ADO.WinDemo.csproj", "{C0E8D4C8-E8BA-4933-8A91-90B1AB27AD76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Pluralsight.ADO.DataLayer", "Pluralsight\ADO\EduSharp.Pluralsight.ADO.DataLayer\EduSharp.Pluralsight.ADO.DataLayer.csproj", "{5C92F796-E6B4-43C7-9E5A-A80A2365DC3B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Pluralsight.ADO.ASPDemo", "Pluralsight\ADO\EduSharp.Pluralsight.ADO.ASPDemo\EduSharp.Pluralsight.ADO.ASPDemo.csproj", "{FCEB99F9-9769-455D-B4E2-5D8B59006531}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -123,6 +129,18 @@ Global
 		{CC8B6F04-2675-4346-8EE8-E1E09F7C6DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC8B6F04-2675-4346-8EE8-E1E09F7C6DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC8B6F04-2675-4346-8EE8-E1E09F7C6DAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0E8D4C8-E8BA-4933-8A91-90B1AB27AD76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0E8D4C8-E8BA-4933-8A91-90B1AB27AD76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0E8D4C8-E8BA-4933-8A91-90B1AB27AD76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0E8D4C8-E8BA-4933-8A91-90B1AB27AD76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5C92F796-E6B4-43C7-9E5A-A80A2365DC3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5C92F796-E6B4-43C7-9E5A-A80A2365DC3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5C92F796-E6B4-43C7-9E5A-A80A2365DC3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5C92F796-E6B4-43C7-9E5A-A80A2365DC3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
