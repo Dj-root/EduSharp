@@ -37,6 +37,9 @@
             this.textBoxFName = new System.Windows.Forms.TextBox();
             this.textBoxLName = new System.Windows.Forms.TextBox();
             this.textBoxDName = new System.Windows.Forms.TextBox();
+            this.buttonDeleteLog = new System.Windows.Forms.Button();
+            this.linkLabelUpdateDepartmentName = new System.Windows.Forms.LinkLabel();
+            this.labelDeptId = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -114,11 +117,44 @@
             this.textBoxDName.Size = new System.Drawing.Size(100, 20);
             this.textBoxDName.TabIndex = 1;
             // 
+            // buttonDeleteLog
+            // 
+            this.buttonDeleteLog.Location = new System.Drawing.Point(16, 415);
+            this.buttonDeleteLog.Name = "buttonDeleteLog";
+            this.buttonDeleteLog.Size = new System.Drawing.Size(75, 23);
+            this.buttonDeleteLog.TabIndex = 3;
+            this.buttonDeleteLog.Text = "Delete Log";
+            this.buttonDeleteLog.UseVisualStyleBackColor = true;
+            this.buttonDeleteLog.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // linkLabelUpdateDepartmentName
+            // 
+            this.linkLabelUpdateDepartmentName.AutoSize = true;
+            this.linkLabelUpdateDepartmentName.Location = new System.Drawing.Point(231, 104);
+            this.linkLabelUpdateDepartmentName.Name = "linkLabelUpdateDepartmentName";
+            this.linkLabelUpdateDepartmentName.Size = new System.Drawing.Size(42, 13);
+            this.linkLabelUpdateDepartmentName.TabIndex = 4;
+            this.linkLabelUpdateDepartmentName.TabStop = true;
+            this.linkLabelUpdateDepartmentName.Text = "Update";
+            this.linkLabelUpdateDepartmentName.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelUpdateDepartmentName_LinkClicked);
+            // 
+            // labelDeptId
+            // 
+            this.labelDeptId.AutoSize = true;
+            this.labelDeptId.Location = new System.Drawing.Point(124, 168);
+            this.labelDeptId.Name = "labelDeptId";
+            this.labelDeptId.Size = new System.Drawing.Size(13, 13);
+            this.labelDeptId.TabIndex = 5;
+            this.labelDeptId.Text = "0";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(394, 450);
+            this.Controls.Add(this.labelDeptId);
+            this.Controls.Add(this.linkLabelUpdateDepartmentName);
+            this.Controls.Add(this.buttonDeleteLog);
             this.Controls.Add(this.buttonGetEmployee);
             this.Controls.Add(this.textBoxDName);
             this.Controls.Add(this.textBoxLName);
@@ -147,6 +183,9 @@
         private System.Windows.Forms.TextBox textBoxFName;
         private System.Windows.Forms.TextBox textBoxLName;
         private System.Windows.Forms.TextBox textBoxDName;
+        private System.Windows.Forms.Button buttonDeleteLog;
+        private System.Windows.Forms.LinkLabel linkLabelUpdateDepartmentName;
+        private System.Windows.Forms.Label labelDeptId;
     }
 }
 

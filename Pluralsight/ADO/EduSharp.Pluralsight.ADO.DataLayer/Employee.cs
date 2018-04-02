@@ -38,6 +38,32 @@ namespace EduSharp.Pluralsight.ADO.DataLayer
             return e;
         }
 
+        /// <summary>
+        /// Update the name of department given its ID
+        /// </summary>
+        /// <param name="departmentId"></param>
+        /// <param name="newName"></param>
+        public void UpdateDepartmentName(int departmentId, string newName)
+        {
+            using (SqlConnection conn = DB.GetSqlConnection())
+            {
+                using (SqlCommand cmd = conn.CreateCommand())
+                {
+                    cmd.CommandText = @"UpdateDepartmentName";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    SqlParameter p1 = new SqlParameter("id", System.Data.SqlDbType.Int);
+                    p1.Value = departmentId;
+                    cmd.Parameters.Add(p1);
+
+                    SqlParameter p2 = new SqlParameter("name", System.Data.SqlDbType.NVarChar, 100);
+                    p2.Value = newName;
+                    cmd.Parameters.Add(p2);
+
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
 
         /// <summary>
         /// Returns an employee using Inline SQL
@@ -115,6 +141,24 @@ where
 ;
  *
  *
+ 
+=========================================================
+create procedure UpdateDepartmentName
+@id int,
+@name nvarchar(100)
+AS
+set nocount on
+
+update HumanResources.Department
+set
+Name = @name
+where
+DepartmentID = @id
+
+ 
+=========================================================    
+    select * from HumanResources.Department
+     *
  *
- *
+ * *
  */
