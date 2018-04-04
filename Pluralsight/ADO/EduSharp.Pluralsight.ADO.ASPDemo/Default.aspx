@@ -39,13 +39,17 @@
                     <td class="auto-style2">Department</td>
                     <td>
                         <asp:TextBox ID="TextBoxDName" runat="server" Width="393px"></asp:TextBox>
+                        <asp:LinkButton ID="LinkButtonUpdateDepartmentName" runat="server" OnClick="LinkButtonUpdateDepartmentName_Click">Update</asp:LinkButton>
                     </td>
                 </tr>
                 <tr>
-                    <td class="auto-style2">&nbsp;</td>
+                    <td class="auto-style2">
+                        <asp:Label ID="LabelDptId" runat="server" Text="0"></asp:Label>
+                    </td>
                     <td>&nbsp;</td>
                 </tr>
             </table>
+            <asp:LinkButton ID="LinkButtonDeleteLog" runat="server" OnClick="LinkButtonDeleteLog_Click">Delete Log</asp:LinkButton>
             <br />
         </div>
     </form>

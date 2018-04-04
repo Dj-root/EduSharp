@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Pluralsight.ADO.Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Pluralsight.ADO.ASPDemo", "Pluralsight\ADO\EduSharp.Pluralsight.ADO.ASPDemo\EduSharp.Pluralsight.ADO.ASPDemo.csproj", "{FCEB99F9-9769-455D-B4E2-5D8B59006531}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EduSharp.Troelsen.Unit21", "Troelsen\EduSharp.Troelsen.Unit21\EduSharp.Troelsen.Unit21.csproj", "{BC29573B-8E33-4666-99CC-863DD8420B15}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -141,6 +143,10 @@ Global
 		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FCEB99F9-9769-455D-B4E2-5D8B59006531}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC29573B-8E33-4666-99CC-863DD8420B15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC29573B-8E33-4666-99CC-863DD8420B15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC29573B-8E33-4666-99CC-863DD8420B15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC29573B-8E33-4666-99CC-863DD8420B15}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -32,6 +32,43 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
                 TextBoxFName.Text = employee.FirstName;
                 TextBoxLName.Text = employee.LastName;
                 TextBoxDName.Text = employee.DepartmentName;
+                LabelDptId.Text = employee.DepartmentId.ToString();
+
+                DataLayer.ApplicationLog.Add4("Searched for user id: " + TextBoxEID.Text);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+        }
+
+        protected void LinkButtonUpdateDepartmentName_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //A search must first be persormed
+                if (TextBoxEID.Text.Length > 0
+                    && TextBoxDName.Text.Length > 0)
+                {
+                    Employees employees = new Employees();
+                    int deptId = int.Parse(LabelDptId.Text);
+                    employees.UpdateDepartmentName(deptId, TextBoxDName.Text);
+                }
+
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+        }
+
+        protected void LinkButtonDeleteLog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataLayer.ApplicationLog.DeleteCommentsForApp("ASPDemo Application");
             }
             catch (Exception exception)
             {

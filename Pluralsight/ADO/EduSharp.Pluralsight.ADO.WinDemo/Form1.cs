@@ -22,11 +22,22 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //            string connString = DataLayer.DB.ConnectionString;
-            DataLayer.DB.ApplicationName = "WinDemo Application";
-            DataLayer.DB.ConnectionTimeout = 30;
+            try
+            {
+                //            string connString = DataLayer.DB.ConnectionString;
+                DataLayer.DB.ApplicationName = "WinDemo Application";
+                DataLayer.DB.ConnectionTimeout = 5;
 
-            SqlConnection conn = DataLayer.DB.GetSqlConnection();
+                SqlConnection conn = DataLayer.DB.GetSqlConnection();
+            }
+            catch (SqlException sqlex)
+            {
+                //Connection Error
+                System.Windows.Forms.MessageBox.Show(this, sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(sqlex);
+                throw;
+            }
+            
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -49,9 +60,11 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
 
                 DataLayer.ApplicationLog.Add4("Searched for user id: "+ textBoxEID.Text);
             }
-            catch (Exception exception)
+            catch (Exception sqlex)
             {
-                Console.WriteLine(exception);
+                //Connection Error
+                System.Windows.Forms.MessageBox.Show(this, sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(sqlex);
                 throw;
             }
         }
@@ -62,9 +75,11 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
             {
                 DataLayer.ApplicationLog.DeleteCommentsForApp("WinDemo Application");
             }
-            catch (Exception exception)
+            catch (Exception sqlex)
             {
-                Console.WriteLine(exception);
+                //Connection Error
+                System.Windows.Forms.MessageBox.Show(this, sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(sqlex);
                 throw;
             }
         }
@@ -83,9 +98,11 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
                 }
 
             }
-            catch (Exception exception)
+            catch (Exception sqlex)
             {
-                Console.WriteLine(exception);
+                //Connection Error
+                System.Windows.Forms.MessageBox.Show(this, sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(sqlex);
                 throw;
             }
         }
