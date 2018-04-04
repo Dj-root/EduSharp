@@ -14,11 +14,30 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //            string connString = DataLayer.DB.ConnectionString;
-            DataLayer.DB.ApplicationName = "ASPDemo Application";
-            DataLayer.DB.ConnectionTimeout = 30;
+            if (!Page.IsPostBack)
+            {
+                LabelError.Text = "";
+            }
+            try
+            {
+                //            string connString = DataLayer.DB.ConnectionString;
+                DataLayer.DB.ApplicationName = "ASPDemo Application";
+                DataLayer.DB.ConnectionTimeout = 5;
 
-            SqlConnection conn = DataLayer.DB.GetSqlConnection();
+                SqlConnection conn = DataLayer.DB.GetSqlConnection();
+            }
+            catch (SqlException sqlex)
+            {
+                LabelError.Text = sqlex.Message;
+                //                Console.WriteLine(exception);
+//                throw;
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                throw;
+            }
+            
         }
 
         protected void LinkButtonGetEmployee_Click(object sender, EventArgs e)
@@ -35,6 +54,12 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
                 LabelDptId.Text = employee.DepartmentId.ToString();
 
                 DataLayer.ApplicationLog.Add4("Searched for user id: " + TextBoxEID.Text);
+            }
+            catch (SqlException sqlex)
+            {
+                LabelError.Text = sqlex.Message;
+                //                Console.WriteLine(exception);
+//                throw;
             }
             catch (Exception exception)
             {
@@ -54,13 +79,16 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
                     Employees employees = new Employees();
                     int deptId = int.Parse(LabelDptId.Text);
                     employees.UpdateDepartmentName(deptId, TextBoxDName.Text);
+
+                    DataLayer.ApplicationLog.Add4("Updated Department with id: "+ TextBoxEID.Text + " to name: " + TextBoxDName.Text);
                 }
 
             }
-            catch (Exception exception)
+            catch (SqlException sqlex)
             {
-                Console.WriteLine(exception);
-                throw;
+//                Console.WriteLine(exception);
+                LabelError.Text = sqlex.Message;
+//                throw;
             }
         }
 
@@ -69,11 +97,13 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
             try
             {
                 DataLayer.ApplicationLog.DeleteCommentsForApp("ASPDemo Application");
+                DataLayer.ApplicationLog.Add4("Deleted all data for: " + DataLayer.DB.ApplicationName);
             }
-            catch (Exception exception)
+            catch (SqlException sqlex)
             {
-                Console.WriteLine(exception);
-                throw;
+                LabelError.Text = sqlex.Message;
+//                Console.WriteLine(exception);
+//                throw;
             }
         }
     }

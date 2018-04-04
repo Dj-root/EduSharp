@@ -151,6 +151,9 @@ comment ntext not null,
 application_name nvarchar(100));
  * 
  *
+ *
+====================================================
+
  create procedure AddAppLog
 @comment ntext
 AS

@@ -74,6 +74,7 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
             try
             {
                 DataLayer.ApplicationLog.DeleteCommentsForApp("WinDemo Application");
+                DataLayer.ApplicationLog.Add4("Deleted all data for: " + DataLayer.DB.ApplicationName);
             }
             catch (Exception sqlex)
             {
@@ -95,6 +96,8 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
                     Employees employees = new Employees();
                     int deptId = int.Parse(labelDeptId.Text);
                     employees.UpdateDepartmentName(deptId, textBoxDName.Text);
+
+                    DataLayer.ApplicationLog.Add4("Updated Department with id: " + textBoxEID.Text + " to name: " + textBoxDName.Text);
                 }
 
             }
