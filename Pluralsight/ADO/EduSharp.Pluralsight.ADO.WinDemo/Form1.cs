@@ -29,6 +29,9 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
                 DataLayer.DB.ConnectionTimeout = 5;
 
                 SqlConnection conn = DataLayer.DB.GetSqlConnection();
+
+                DataTable tableLog = DataLayer.ApplicationLog.GetLog(DataLayer.DB.ApplicationName);
+                dataGridViewAppLog.DataSource = tableLog;
             }
             catch (SqlException sqlex)
             {
@@ -108,6 +111,11 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
                 Console.WriteLine(sqlex);
                 throw;
             }
+        }
+
+        private void dataGridViewAppLog_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

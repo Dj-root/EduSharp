@@ -137,6 +137,29 @@ namespace EduSharp.Pluralsight.ADO.DataLayer
             }
         }
 
+        /// <summary>
+        /// Retrieves application log details for a given application
+        /// </summary>
+        /// <param name="appName"></param>
+        /// <returns></returns>
+        public static DataTable GetLog(string appName)
+        {
+            DataTable table = new DataTable("ApplicationLog");
+            SqlDataAdapter da = null;
+
+            using (SqlConnection conn = DB.GetSqlConnection())
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM ApplicationLog WHERE application_name = @appname",conn);
+                cmd.Parameters.Add(new SqlParameter("appname", System.Data.SqlDbType.NVarChar,100));
+                cmd.Parameters["appname"].Value = appName;
+
+                da = new SqlDataAdapter(cmd);
+
+                int res = da.Fill(table);
+            }
+
+            return table;
+        }
     }
 }
 
