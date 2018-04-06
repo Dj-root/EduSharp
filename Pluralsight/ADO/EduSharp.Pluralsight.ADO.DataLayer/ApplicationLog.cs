@@ -160,6 +160,24 @@ namespace EduSharp.Pluralsight.ADO.DataLayer
 
             return table;
         }
+        /// <summary>
+        /// Applies the INSERT, UPDATE, DELETE operations from the disconnected data table
+        /// </summary>
+        /// <param name="tableLog"></param>
+        /// <returns></returns>
+        public static DataTable UpdateLogChanges(DataTable tableLog)
+        {
+            SqlDataAdapter da = new SqlDataAdapter();
+
+            using (SqlConnection conn = DB.GetSqlConnection())
+            {
+                da.SelectCommand = new SqlCommand("SELECT * FROM ApplicationLog",conn);
+                SqlCommandBuilder cmdBuilder = new SqlCommandBuilder(da);
+                int res = da.Update(tableLog);
+
+                return tableLog;
+            }
+        }
     }
 }
 

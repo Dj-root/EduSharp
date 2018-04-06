@@ -12,6 +12,13 @@
         .auto-style2 {
             width: 264px;
         }
+        .auto-style3 {
+            width: 264px;
+            height: 23px;
+        }
+        .auto-style4 {
+            height: 23px;
+        }
     </style>
 </head>
 <body>
@@ -47,6 +54,12 @@
                         <asp:Label ID="LabelDptId" runat="server" Text="0"></asp:Label>
                     </td>
                     <td>&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="auto-style3" colspan="2">
+                        <asp:GridView ID="GridViewAppLog" runat="server" OnSelectedIndexChanged="GridViewAppLog_SelectedIndexChanged">
+                        </asp:GridView>
+                    </td>
                 </tr>
             </table>
             <asp:LinkButton ID="LinkButtonDeleteLog" runat="server" OnClick="LinkButtonDeleteLog_Click">Delete Log</asp:LinkButton>

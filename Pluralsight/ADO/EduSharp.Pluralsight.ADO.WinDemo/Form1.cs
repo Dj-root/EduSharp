@@ -117,5 +117,22 @@ namespace EduSharp.Pluralsight.ADO.WinDemo
         {
 
         }
+
+        private void buttonUpdateLog_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable table = (DataTable) dataGridViewAppLog.DataSource;
+                DataTable tableRes = DataLayer.ApplicationLog.UpdateLogChanges(table);
+                dataGridViewAppLog.DataSource = tableRes;
+            }
+            catch (Exception sqlex)
+            {
+                //Connection Error
+                System.Windows.Forms.MessageBox.Show(this, sqlex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Console.WriteLine(sqlex);
+                throw;
+            }
+        }
     }
 }

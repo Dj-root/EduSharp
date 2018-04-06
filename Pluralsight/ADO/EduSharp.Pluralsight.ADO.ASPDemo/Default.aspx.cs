@@ -17,27 +17,29 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
             if (!Page.IsPostBack)
             {
                 LabelError.Text = "";
-            }
-            try
-            {
-                //            string connString = DataLayer.DB.ConnectionString;
-                DataLayer.DB.ApplicationName = "ASPDemo Application";
-                DataLayer.DB.ConnectionTimeout = 5;
+                try
+                {
+                    //            string connString = DataLayer.DB.ConnectionString;
+                    DataLayer.DB.ApplicationName = "ASPDemo Application";
+                    DataLayer.DB.ConnectionTimeout = 5;
 
-                SqlConnection conn = DataLayer.DB.GetSqlConnection();
+                    SqlConnection conn = DataLayer.DB.GetSqlConnection();
+
+                    GridViewAppLog.DataSource = DataLayer.ApplicationLog.GetLog(DataLayer.DB.ApplicationName);
+                    GridViewAppLog.DataBind();
+                }
+                catch (SqlException sqlex)
+                {
+                    LabelError.Text = sqlex.Message;
+                    //                Console.WriteLine(exception);
+                    //                throw;
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
             }
-            catch (SqlException sqlex)
-            {
-                LabelError.Text = sqlex.Message;
-                //                Console.WriteLine(exception);
-//                throw;
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-                throw;
-            }
-            
         }
 
         protected void LinkButtonGetEmployee_Click(object sender, EventArgs e)
@@ -54,12 +56,15 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
                 LabelDptId.Text = employee.DepartmentId.ToString();
 
                 DataLayer.ApplicationLog.Add4("Searched for user id: " + TextBoxEID.Text);
+
+                GridViewAppLog.DataSource = DataLayer.ApplicationLog.GetLog(DataLayer.DB.ApplicationName);
+                GridViewAppLog.DataBind();
             }
             catch (SqlException sqlex)
             {
                 LabelError.Text = sqlex.Message;
                 //                Console.WriteLine(exception);
-//                throw;
+                //                throw;
             }
             catch (Exception exception)
             {
@@ -80,15 +85,18 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
                     int deptId = int.Parse(LabelDptId.Text);
                     employees.UpdateDepartmentName(deptId, TextBoxDName.Text);
 
-                    DataLayer.ApplicationLog.Add4("Updated Department with id: "+ TextBoxEID.Text + " to name: " + TextBoxDName.Text);
+                    DataLayer.ApplicationLog.Add4("Updated Department with id: " + TextBoxEID.Text + " to name: " + TextBoxDName.Text);
+
+                    GridViewAppLog.DataSource = DataLayer.ApplicationLog.GetLog(DataLayer.DB.ApplicationName);
+                    GridViewAppLog.DataBind();
                 }
 
             }
             catch (SqlException sqlex)
             {
-//                Console.WriteLine(exception);
+                //                Console.WriteLine(exception);
                 LabelError.Text = sqlex.Message;
-//                throw;
+                //                throw;
             }
         }
 
@@ -98,13 +106,21 @@ namespace EduSharp.Pluralsight.ADO.ASPDemo
             {
                 DataLayer.ApplicationLog.DeleteCommentsForApp("ASPDemo Application");
                 DataLayer.ApplicationLog.Add4("Deleted all data for: " + DataLayer.DB.ApplicationName);
+
+                GridViewAppLog.DataSource = DataLayer.ApplicationLog.GetLog(DataLayer.DB.ApplicationName);
+                GridViewAppLog.DataBind();
             }
             catch (SqlException sqlex)
             {
                 LabelError.Text = sqlex.Message;
-//                Console.WriteLine(exception);
-//                throw;
+                //                Console.WriteLine(exception);
+                //                throw;
             }
+        }
+
+        protected void GridViewAppLog_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
